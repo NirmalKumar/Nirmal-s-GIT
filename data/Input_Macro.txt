@@ -1,0 +1,2689 @@
+ ***********************************************************************
+ *       MESSAGE CHARACTERISTICS                                       *
+ *       KEY = '10'      USED BY SEGMENTS - DMC                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1
+ WR10CON&CG1  DS   CL1                  CONFIRMATION INDICATION
+ WR10WUC&CG1  DS   CL1                  UNIT OF WEIGHT
+ WR10NOF&CG1  DS   CL1                  #FLTS TO BE PROCESSED
+ WR10NFD3&CG1 DS   CL15         6350    MAX NBR FDR'S ALLOWED     EIN340
+ WR10E10&CG1  EQU  *                    END OF ITEM WITH KEY = '10'
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TOUR INFORMATION                                       * EIJ959
+ *       KEY = '11'      USED BY SEGMENTS - ATI                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10TPI&CG1  DS   CL15       C993 9908 TOUR CODE                 EIJ959
+ WR10E11&CG1  EQU  *                    END OF ITEM WITH KEY='11' EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       DEVICE CHARACTERISTICS                                        *
+ *       KEY = '12'      USED BY SEGMENTS - DVC                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1
+ WR10BPA&CG1  DS   CL1                  INDICATES PRESENCE OF BPP
+ WR10BPN&CG1  DS   CL1                  #REMAINING FLTS FOR BTP
+ WR10E12&CG1  EQU  *                    END OF ITEM WITH KEY = '12'
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       COUPON INFORMATION                                     * EIJ959
+ *       KEY = '13'      USED BY SEGMENTS - CPN                 * EIJ959
+ *       PADIS SEGMENT DIRECTORY VERSION.                       * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10CSN&CG1  DS   CL6        C640 1050 COUPON NUMBER             EIJ959
+ WR10CSC&CG1  DS   CL3             4405 COUPON STATUS             EIJ959
+ WR10CMA&CG1  DS   CL18            5004 COUPON MONETARY AMOUNT    EIJ959
+ WR10SNS&CG1  DS   CL3             1159 SEQUENCE NUMBER SOURCE    EIJ959
+ WR10CCI&CG1  DS   CL35            9887 SETTLEMENT AUTHORISATION  EIJ959
+ WR10SIV&CG1  DS   CL3             1245 VOLUNTARY/INVOLUNTARY     EIJ959
+ WR10PCS&CG1  DS   CL3             4405 PREVIOUS COUPON STATUS    EIJ959
+ WR10SQN&CG1  DS   CL6             1050 SEQUENCE NUMBER           EIJ959
+ WR10E13&CG1  EQU  *                    END OF ITEM WITH KEY='13' EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       DATE AND TIME INFORMATION                              * EIJ959
+ *       KEY = '14'      USED BY SEGMENTS - DAT                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10DPQ&CG1  DS   CL3        C688 2005 PERIOD QUALIFIER          EIJ959
+ WR10DFD&CG1  DS   CL6             9916 FIRST DATE (DDMMYY)       EIJ959
+ WR10DFT&CG1  DS   CL4             9918 FIRST TIME (HHMM)         EIJ959
+ WR10E14&CG1  EQU  *                    END OF ITEM WITH KEY='14' EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       DOCUMENT INFORMATION DETAILS                           * EIJ959
+ *       KEY = '15'      USED BY SEGMENTS - DID                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10DCN&CG1  DS   CL35       C350 1004 CERTIFICATE NUMBER        EIJ959
+ WR10E15&CG1  EQU  *                    END OF ITEM WITH KEY='15' EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       REQUESTOR IDENTIFICATION                                      *
+ *       KEY = '16'      USED BY SEGMENTS - LOR                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10WHO&CG1 DS   CL2                   TRADING PARTNER AIRLINE
+             DS   CL1                   SPARE FOR EXPANSION
+ WR10WHR&CG1 DS   CL3                   CITY AT WHICH REQUEST WAS MADE
+             DS   CL2                   SPARE FOR EXPANSION
+ WR10WHC&CG1 DS   CL2                   COUNTRY CODE OF REQUESTOR
+ *R10E16&CG1  EQU  *                    END OF ITEM WITH KEY ='16'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10WHO4&CG1 DS   CL2                  TRADING PARTNER AIRLINE   EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10WHR4&CG1 DS   CL3                  CITY AT WHICH RQST MADE   EIF033
+              DS   CL2                  SPARE FOR EXPANSION       EIF033
+ WR10WHC4&CG1 DS   CL2                  COUNTRY CODE OF REQUESTOR EIF033
+ WR10E16&CG1  EQU  *                    END OF ITEM WITH KEY='16' EIF033
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       EXCESS BAGGAGE DETAILS                                 * EIJ959
+ *       KEY = '17'      USED BY SEGMENTS - EBD                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10BA1&CG1  DS   CL3        C675 6060 BAGGAGE ALLOWANCE         EIJ959
+ WR10BC1&CG1  DS   CL3             5463 BAGGAGE QUANTITY CODE     EIJ959
+ WR10BU1&CG1  DS   CL3             6411 MEASURE UNIT QUALIFIER    EIJ959
+ WR10BA2&CG1  DS   CL3        C675 6060 BAGGAGE ALLOWANCE         EIJ959
+ WR10BC2&CG1  DS   CL3             5463 BAGGAGE QUANTITY CODE     EIJ959
+ WR10BU2&CG1  DS   CL3             6411 MEASURE UNIT QUALIFIER    EIJ959
+ WR10BA3&CG1  DS   CL3        C675 6060 BAGGAGE ALLOWANCE         EIJ959
+ WR10BC3&CG1  DS   CL3             5463 BAGGAGE QUANTITY CODE     EIJ959
+ WR10BU3&CG1  DS   CL3             6411 MEASURE UNIT QUALIFIER    EIJ959
+ WR10E17&CG1  EQU  *                    END OF ITEM WITH KEY='17' EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       REQUESTOR IDENTIFICATION                                      *
+ *       KEY = '18'      USED BY SEGMENTS - LOR                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10RID&CG1 DS   CL4                   ORGANISATIONAL IDENTIFIER
+ WR10OID&CG1 DS   CL7                   OFFICE IDENTIFIER
+ WR10AUT&CG1 DS   CL4                   REQUESTOR AUTHORITY CODE
+ WR10LRQ&CG1 DS   XL2                   LENGTH UNIQUE REQUESTOR IDENT.
+ WR10REQ&CG1 DS   CL1                   UNIQUE REQUESTOR IDENTIFIER
+ WR10E18&CG1  EQU  *                    END OF ITEM WITH KEY = '18'
+                                                            SPACE 2
+ ***********************************************************************
+ *       CASCADING HOST DETAILS                                  EIF033*
+ *       KEY = '19'      USED BY SEGMENTS - CHD                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10HAC4&CG1 DS   CL2                  1ST HOST AIRLINE CODE     EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10HOB4&CG1 DS   CL5                  1ST HOST ORIGIN           EIF033
+ WR10HCB4&CG1 DS   CL2                  1ST HOST COUNTRY OF ORIGINEIF033
+ WR10SCC4&CG1 DS   CL2                  SCHEDULED CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10OCC4&CG1 DS   CL2                  OPERATING CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10AFN4&CG1 DS   CL4                  ACTION FLIGHT NUMBER      EIF033
+ WR10AFS4&CG1 DS   CL1                  OPERATIONAL SUFFIX        EIF033
+ WR10AFT4&CG1 DS   CL10                 ACTION FLT DEPT DATE/TIME EIF033
+ WR10AFD4&CG1 DS   CL3                  ACTION FLT DEPT AIRPORT   EIF033
+              DS   CL2                  SPARE FOR EXPANSION       EIF033
+ WR10AFC4&CG1 DS   CL1                  ACTION FLT CONTINUATION   EIF033
+ WR10MNH4&CG1 DS   CL1                  MAX NO. OF HOSTS ALLOWED  EIF033
+ *EIN340 WR10E19&CG1  EQU  *            END OF ITEM WITH KEY='19' EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          IATCI VERSION 03:1        EIN340
+ WR10HAC3&CG1 DS   CL2    C059  3127    1ST HOST AIRLINE CODE     EIN340
+              DS   CL15                 SPARE FOR EXPANSION       EIN340
+ WR10HOB3&CG1 DS   CL5          3800    1ST HOST ORIGIN           EIN340
+ WR10HCB3&CG1 DS   CL2          3805    1ST HOST COUNTRY OF ORIGINEIN340
+ WR10SCC3&CG1 DS   CL2    C013  3127    SCHEDULED CARRIER CODE    EIN340
+              DS   CL15                 SPARE FOR EXPANSION       EIN340
+ WR10OCC3&CG1 DS   CL2          3127    OPERATING CARRIER CODE    EIN340
+              DS   CL15                 SPARE FOR EXPANSION       EIN340
+ WR10AFN3&CG1 DS   CL4    C014  3802    ACTION FLIGHT NUMBER      EIN340
+ WR10AFS3&CG1 DS   CL1          9801    OPERATIONAL SUFFIX        EIN340
+ WR10AFT3&CG1 DS   CL10   2281          ACTION FLT DEPT DATE/TIME EIN340
+ WR10AFD3&CG1 DS   CL3    3215          ACTION FLT DEPT AIRPORT   EIN340
+              DS   CL2                  SPARE FOR EXPANSION       EIN340
+ WR10AFA3&CG1 DS   CL3    3259          ACTION FLT APT/CITY ARRIV EIN340
+              DS   CL2                  SPARE FOR EXPANSION       EIN340
+ WR10AFC3&CG1 DS   CL1    9856          ACTION FLT CONTINUATION   EIN340
+ WR10MNH3&CG1 DS   CL1    9802          MAX NO. OF HOSTS ALLOWED  EIN340
+ WR10E19&CG1  EQU  *                    END OF ITEM WITH KEY='19' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       HOST DEFINITION                                         EIF033*
+ *       KEY = '1A'      USED BY SEGMENTS - CHD                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10HDQ4&CG1 DS   CL1                  HOST DEFINITION-QUALIFIER EIF033
+ WR10HDN4&CG1 DS   CL1                  HOST DEFINITION-NUMERIC   EIF033
+ WR10NOH4&CG1 DS   CL2                  NAME OF HOST              EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10E1A&CG1  EQU  *                    END OF ITEM WITH KEY='1A' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       MAP - MESSAGE / APPLICATION / PRODUCT DETAILS (Q)       EIK130*
+ *       KEY = '1B'                                              EIK130*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10I1B&CG1  DS   CL3    C654 4401 INSTRUCTION, CODED            EIK130
+ WR10S1B&CG1  DS   CL2    9906      SYSTEM ID (IATA CODE)         EIK130
+ WR10F1B&CG1  DS   CL3    C655      MESSAGE FUNCTION              EIK130
+ WR10A1B&CG1  DS   CL35        9755 APPLICATION ID                EIK130
+ WR10Q1B&CG1  DS   CL35        9756 APPLICATION ID QUALIFIER      EIK130
+ WR10E1B&CG1  EQU  *                END OF ITEM WITH KEY = '1B'   EIK130
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       FORM OF PAYMENT                                        * EIJ959
+ *       KEY = '1C'      USED BY SEGMENTS - FOP                 * EIJ959
+ *       THIS IS THE AMADEUS (1A) IMPLEMENTATION OF THE FOP     * EIJ959
+ *       SEGMENT AS USED IN TKTREQ/RES AND TKCREQ/RES.          * EIJ959
+ *       THIS DIFFERS FROM THE PADIS IMPLEMENTATION GUIDE VER.  * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10FOP&CG1  DS   CL3        C641 9888 FORM OF PAYMENT IDENT     EIJ959
+ WR10ONF&CG1  DS   CL3             9988 OLD OR NEW FOP            EIJ959
+ WR10FMA&CG1  DS   CL18            5004 MONETARY AMOUNT           EIJ959
+ WR10FCI&CG1  DS   CL3             9906 COMPANY VENDOR CODE       EIJ959
+ WR10FRN&CG1  DS   CL35            1154 FOP INFORMATION           EIJ959
+ WR10FFD&CG1  DS   CL4             9916 EXPIRATION DATE MMYY      EIJ959
+ WR10FAC&CG1  DS   CL6             9889 APPROVAL CODE             EIJ959
+ WR10FCS&CG1  DS   CL3             9890 APPROVAL CODE SOURCE      EIJ959
+ WR10FMB&CG1  DS   CL18            5004 AUTHORISED AMOUNT         EIJ959
+ WR10FAV&CG1  DS   CL3             9891 ADDRESS VERIFICATION      EIJ959
+ WR10FAH&CG1  DS   CL47            3194 ACCOUNT HOLDER NUMBER     EIJ959
+ WR10FPT&CG1  DS   CL3             2475 PAYMENT TIME REFERENCE    EIJ959
+ WR10FFT&CG1  DS   CL70            4440 FREE TEXT                 EIJ959
+ WR10FMS&CG1  DS   CL3             7453 MEMBERSHIP STATUS         EIJ959
+ WR10FTI&CG1  DS   CL25            9892 TRANSACTION INFORMATION   EIJ959
+ WR10E1C&CG1  EQU  *                    END OF ITEM WITH KEY='1C' EIJ959
+                                                            SPACE 2
+ **************************************************************** EIK130
+ *       TVL - TRAVELER PRODUCT INFORMATION                     * EIK130
+ *       KEY = '1D'                                             * EIK130
+ **************************************************************** EIK130
+ *
+              ORG  WR10ORG&CG1
+ WR10D1D&CG1  DS   CL6    C310 9916     DEPARTURE DATE (DDMMYY)   EIK130
+ WR10T1D&CG1  DS   CL4         9918     DEPARTURE TIME (HHMM)     EIK130
+ WR10A1D&CG1  DS   CL6         9920     ARRIVAL DATE (DDMMYY)     EIK130
+ WR10H1D&CG1  DS   CL4         9922     ARRIVAL TIME (HHMM)       EIK130
+ WR10V1D&CG1  DS   CL1         9954     DATE VARIATION            EIK130
+ WR10B1D&CG1  DS   CL3    C328 3225     ORIGIN LOCATION (BPT)     EIK130
+ WR10O1D&CG1  DS   CL3    C328 3225     DEST LOCATION (OPT)       EIK130
+ WR10C1D&CG1  DS   CL2    C306 9906     COMPANY IDENTIFICATION    EIK130
+ WR10F1D&CG1  DS   CL4    C308 9908     FLIGHT NUMBER             EIK130
+ WR10S1D&CG1  DS   CL1         7037     RBD - CLASS OF SERVICE    EIK130
+ WR10G1D&CG1  DS   CL2    C309 1050     GROUP NUMBER              EIK130
+ WR10M1D&CG1  DS   CL2         1050     MARRIED INDICATOR         EIK130
+ WR10R1D&CG1  DS   CL2         1050     E-TICKETING INDICATOR     EIK130
+ WR10Q1D&CG1  DS   CL3    1082          SEQUENCE NUMBER           EIK130
+ WR10P1D&CG1  DS   CL1    7365          PROCESSING INDICATOR      EIK130
+ WR10E1D&CG1  EQU  *                END OF ITEM WITH KEY = '1D'   EIK130
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       INTERACTIVE FREE TEXT                                  * EIJ959
+ *       KEY = '1E'      USED BY SEGMENTS - IFT                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10TSQ&CG1  DS   CL3        C346 4451 TEXT SUBJECT QUALIFIER    EIJ959
+ WR10TIT&CG1  DS   CL4             9980 INFORMATION TYPE          EIJ959
+ WR10TSC&CG1  DS   CL3             4405 TEXT STATUS CODE          EIJ959
+ WR10E1E&CG1  EQU  *                    END OF ITEM WITH KEY='1E' EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       INTERACTIVE FREE TEXT                                  * EIJ959
+ *       KEY = '1F'      USED BY SEGMENTS - IFT                 * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10TFT&CG1  DS   CL1        4440      FREE TEXT                 EIJ959
+ WR10E1F&CG1  EQU  *                    END OF ITEM WITH KEY='1E' EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       RESPONSE INFORMATION                                          *
+ *       KEY = '20'      USED BY SEGMENTS - RAD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10RSP&CG1 DS   CL1                   TYPE OF QUERY THIS RESPONDS TO
+ WR10ACT&CG1 DS   CL1                   ACTION TO BE TAKEN USING RESP
+ WR10E20&CG1  EQU  *                    END OF ITEM WITH KEY = '20'
+                                                            EJECT
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       MONETARY INFORMATION                                   * EIJ959
+ *       KEY = '21'      USED BY SEGMENTS - MON                 * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10MAQ&CG1  DS   CL3        C663 5025 AMOUNT QUALIFIER          EIJ959
+ WR10MAL&CG1  DS   CL18            1230 ALLOWANCE                 EIJ959
+ WR10MCC&CG1  DS   CL3             6345 CURRENCY CODE             EIJ959
+ WR10MPL&CG1  DS   CL25                 PLACE/LOCATION            EIJ959
+ WR10E21&CG1  EQU  *                    END OF ITEM WITH KEY='21' EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       MESSAGE ACTION DETAILS                                 * EIJ959
+ *       KEY = '22'      USED BY SEGMENTS - MSG                 * EIJ959
+ *       PADIS SEGMENT DIRECTORY VERSION.                       * EIJ959
+ **************************************************************** EIJ959
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIJ959
+ WR10MBF&CG1  DS   CL3        C302 4025 BUSINESS FUNCTION         EIJ959
+ WR10MPF&CG1  DS   CL3             1225 PRIMARY FUNCTION          EIJ959
+ WR10MRA&CG1  DS   CL3             3055 RESPONSIBLE AGENCY        EIJ959
+ WR10MSF&CG1  DS   CL3             1225 SECONDARY FUNCTION        EIJ959
+ WR10MRT&CG1  DS   CL3        4343      RESPONSE TYPE             EIJ959
+ WR10E22&CG1  EQU  *                    END OF ITEM WITH KEY='22' EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       CLT - MESSAGE RESPONSE                                  EIK130*
+ *       KEY = '23'                                              EIK130*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIK130
+ WR10A23&CG1  DS   CL3    1229      ACTION REQUEST                EIK130
+ WR10F23&CG1  DS   CL3    1225      BUSINESS FUNCTION             EIK130
+ WR10T23&CG1  DS   CL68   4440      FREE TEXT                     EIK130
+ WR10E23&CG1  EQU  *                END OF ITEM WITH KEY = '23'   EIK130
+                                                            SPACE 2
+ **************************************************************** EIK130
+ *       INTERACTIVE FREE TEXT                                  * EIK130
+ *       KEY = '24'      USED BY SEGMENTS - IFT                 * EIK130
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH SABRE          * EIK130
+ **************************************************************** EIK130
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIK130
+ WR10Q24&CG1  DS   CL3        C346 4451 TEXT SUBJECT QUALIFIER    EIK130
+ WR10I24&CG1  DS   CL4             9980 INFORMATION TYPE          EIK130
+ WR10S24&CG1  DS   CL3             4405 TEXT STATUS CODE          EIK130
+ WR10C24&CG1  DS   CL35            9906 COMPANY IDENTIFICATION    EIK130
+ WR10L24&CG1  DS   CL3             3453 LANGUAGE                  EIK130
+ WR10E24&CG1  EQU  *                    END OF ITEM WITH KEY='24' EIK130
+                                                            SPACE 2
+ ***********************************************************************
+ *       FLIGHT LEVEL ERROR                                            *
+ *       KEY = '25'      USED BY SEGMENTS - ERD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10LEV&CG1 DS   CL1                   PROCESSING LEVEL
+ WR10PRI&CG1 DS   XL1                   PRIORITY OF ERROR MESSAGE
+ WR10ERN&CG1 DS   CL4                   ERROR/WARNING MESSAGE #
+ WR10E25&CG1  EQU  *                    END OF ITEM WITH KEY = '25'
+                                                            SPACE 2
+ ***********************************************************************
+ *       FREE TEXT DETAIL LREC                                         *
+ *       KEY = '26'      USED BY ELEMENT '4510'                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10LET&CG1 DS   XL2                   LENGTH OF ERROR MESG
+ WR10ERT&CG1 DS   CL1                   ERROR MESG IN FREE TEXT FORMAT
+ WR10E26&CG1  EQU  *                    END OF ITEM WITH KEY = '26'
+                                                            SPACE 2
+ ***********************************************************************
+ *       ERROR INFORMATION                                       EIH838*
+ *       KEY = '27'      USED BY SEGMENTS - ERD                  EIH838*
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1                                     EIH838
+ WR10PL27&CG1 DS   CL1                  PROCESSING LEVEL          EIH838
+ WR10ER27&CG1 DS   CL4                  ERROR WARNING MESSAGE     EIH838
+ WR10FT27&CG1 DS   CL70                 FREE TEXT                 EIH838
+ WR10E27&CG1  EQU  *                  END OF ITEM WITH KEY = '27' EIH838
+                                                            SPACE 2
+ ***********************************************************************
+ *       FLIGHT LEVEL WARNING                                          *
+ *       KEY = '28'      USED BY SEGMENTS - WAD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E25&CG1
+ WR10E28&CG1  EQU  *                    END OF ITEM WITH KEY = '28'
+                                                            SPACE 2
+             ORG  WR10E26&CG1           FREE TEXT
+ WR10E29&CG1  EQU  *                    END OF ITEM WITH KEY = '29'
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       PTK - PRICING TICKETING DETAILS                        * EIJ959
+ *       KEY = '2A'                                             * EIJ959
+ *       THIS IS THE AMADEUS (1A) IMPLEMENTATION OF THE PKT     * EIJ959
+ *       SEGMENT AS USED IN TKTREQ/RES AND TKCREQ/RES.          * EIJ959
+ *       THIS DIFFERS FROM THE PADIS IMPLEMENTATION GUIDE VER.  * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10Q01&CG1  DS   CL3    C664 5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q02&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q03&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q04&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q05&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q06&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q07&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q08&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q09&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q10&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q11&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q12&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q13&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q14&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q15&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q16&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q17&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q18&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q19&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10Q20&CG1  DS   CL3         5387 PRICE TYPE QUALIFIER          EIJ959
+ WR10QPT&CG1  DS   CL3    5379      PRICE TARIFF                  EIJ959
+ WR10QDT&CG1  DS   CL6    C310 9916 DATE OF ISSUANCE (DDMMYY)     EIJ959
+ WR10LD1&CG1  DS   CL5    C666 3225 LOCATION IDENTIFICATION       EIJ959
+ WR10LC1&CG1  DS   CL3         3207 LOCATION COUNTRY              EIJ959
+ WR10LD2&CG1  DS   CL5    C666 3225 LOCATION IDENTIFICATION       EIJ959
+ WR10LC2&CG1  DS   CL3         3207 LOCATION COUNTRY              EIJ959
+ WR10E2A&CG1  EQU  *                END OF ITEM WITH KEY = '2A'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       PTS - PRICING TICKETING SUBSEQUENT                     * EIJ959
+ *       KEY = '2B'                                             * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10RT1&CG1  DS   CL15   C643 5242 RATE TARIFF CLASS             EIJ959
+ WR10DI1&CG1  DS   CL3         9988 DATA INDICATOR                EIJ959
+ WR10RT2&CG1  DS   CL15        5242 RATE TARIFF CLASS             EIJ959
+ WR10DI2&CG1  DS   CL3         9988 DATA INDICATOR                EIJ959
+ WR10IC1&CG1  DS   CL3    4183      REASON FOR ISSUANCE           EIJ959
+ WR10IC2&CG1  DS   CL3    4183      REASON FOR ISSUANCE           EIJ959
+ WR10IC3&CG1  DS   CL3    4183      REASON FOR ISSUANCE           EIJ959
+ WR10E2B&CG1  EQU  *                END OF ITEM WITH KEY = '2B'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       RCI - RESERVATION CONTROL INFORMATION                  * EIJ959
+ *       KEY = '2C'                                             * EIJ959
+ *       PADIS IMPLEMENTATION GUIDE FOR USE WITH TKTREQ/RES AND * EIJ959
+ *       TKCREQ/RES MESSAGES.                                   * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10ACC&CG1  DS   CL3    C330 9906 AIRLINE - CRS CODE            EIJ959
+ WR10RCN&CG1  DS   CL20        9956 RES CONTROL NUMBER REF        EIJ959
+ WR10RCT&CG1  DS   CL1         9958 RES CONTROL TYPE              EIJ959
+ WR10E2C&CG1  EQU  *                END OF ITEM WITH KEY = '2C'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TAI - TICKETING AGENT INFORMATION                      * EIJ959
+ *       KEY = '2D'                                             * EIJ959
+ *       PADIS SEGMENT DIRECTORY VERSION.                       * EIJ959
+ *       AMADEUS (1A) EXPECT 4 ALPHANUMERIC SERVICE PROVIDER    * EIJ959
+ *       CODE.                                                  * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10SPC&CG1  DS   CL15   9996      SERVICE PROVIDER CODE         EIJ959
+ WR10E2D&CG1  EQU  *                END OF ITEM WITH KEY = '2D'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TAI - TICKETING AGENT INFORMATION                      * EIJ959
+ *       KEY = '2E'                                             * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10IHC&CG1  DS   CL9    C642 9902 IN-HOUSE ID CODE              EIJ959
+ WR10IHT&CG1  DS   CL3         9893 ID TYPE                       EIJ959
+ WR10E2E&CG1  EQU  *                END OF ITEM WITH KEY = '2E'   EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       UCI - INTERCHANGE RESPONSE                              EIK130*
+ *       KEY = '2F'                                              EIK130*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C2F&CG1  DS   CL14   0020      INTERCHANGE CONTROL REFERENCE EIK130
+ WR10S2F&CG1  DS   CL35   S002 0004 SENDER OF INTERCHANGE         EIK130
+ WR10P2F&CG1  DS   CL4         0007 PARTNER ID CODE QUALIFIER     EIK130
+ WR10R2F&CG1  DS   CL35   S003 0010 RECIPIENT OF INTERCHANGE      EIK130
+ WR10Q2F&CG1  DS   CL4         0007 PARTNER ID CODE QUALIFIER     EIK130
+ WR10A2F&CG1  DS   CL3    0083      ACTION, CODED                 EIK130
+ WR10E2F&CG1  EQU  *                END OF ITEM WITH KEY = '2F'   EIK130
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TKT - TICKET NUMBER DETAILS                            * EIJ959
+ *       KEY = '3F'                                             * EIJ959
+ *       THIS IS THE PADIS VERSION OF TKT INFORMATION.          * EIJ959
+ *       AMADEUS (1A) EXPECT 14 ALPHANUMERIC DOCUMENT NUMBER    * EIJ959
+ *       AND 2 NUMERIC TOTAL NUMBER OF ITEMS.                   * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10TDN&CG1  DS   CL35   C667 1004     DOCUMENT NUMBER           EIJ959
+ WR10TNM&CG1  DS   CL3         1001     DOCUMENT NAME             EIJ959
+ WR10TNI&CG1  DS   CL15        7240     TOTAL NUMBER OF ITEMS     EIJ959
+ WR10TDI&CG1  DS   CL3         9988     DATA INDICATOR            EIJ959
+ WR10TAC&CG1  DS   CL3         1229     ACTION REQUEST/NOTIFIC    EIJ959
+ WR10TST&CG1  DS   CL3    4405          STATUS CODED              EIJ959
+ WR10E3F&CG1  EQU  *                END OF ITEM WITH KEY = '3F'   EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       ONWARD FLIGHT DETAILS                                         *
+ *       KEY = '40'      USED BY SEGMENTS - FDR/FDQ                    *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SOC&CG1 DS   0CL3                  SCHEDULED CARRIER CODE
+ WR10OAL&CG1 DS   CL2                   AIRLINE CODE
+             DS   CL1                   SPARE FOR A/L CODE EXPANSION
+ WR10OOC&CG1 DS   CL3                   OPERATING CARRIER CODE
+ WR10OFN&CG1 DS   CL4                   ONWARD FLIGHT NUMBER
+ WR10OFS&CG1 DS   CL1                   ONWARD FLIGHT SUFFIX
+ WR10ODD&CG1 DS   CL10                  DEPART DATE & TIME (YYMMDDHHMM)
+ WR10OBP&CG1 DS   CL3                   BOARD POINT
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10OOP&CG1 DS   CL3                   OFF POINT
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10OAD&CG1 DS   CL10                  ARRIVAL DATE & TIME (YYMMDDHHMM)
+ WR10OFC&CG1 DS   CL1                   FLIGHT CONTINUATION INDICATOR
+ *R10E40&CG1  EQU  *                    END OF ITEM WITH KEY ='40'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10SOC4&CG1 DS   0CL17                SCHEDULED CARRIER CODE    EIF033
+ WR10OAL4&CG1 DS   CL2                  AIRLINE CODE              EIF033
+              DS   CL15                 SPARE FOR A/L CODE EXPANS EIF033
+ WR10OPC4&CG1 DS   0CL17                OPERATING CARRIER CODE    EIF033
+ WR10OOC4&CG1 DS   CL2                  OPERATING CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10OFN4&CG1 DS   CL4                  ONWARD FLIGHT NUMBER      EIF033
+ WR10OFS4&CG1 DS   CL1                  ONWARD FLIGHT SUFFIX      EIF033
+ WR10ODD4&CG1 DS   CL10                 DEP DATE/TIME (YYMMDDHHMM)EIF033
+ WR10OBP4&CG1 DS   CL3                  BOARD POINT               EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10OOP4&CG1 DS   CL3                  OFF POINT                 EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10OAD4&CG1 DS   CL10                 ARR DATE/TIME (YYMMDDHHMM)EIF033
+ WR10OFC4&CG1 DS   CL1                  FLIGHT CONTINUATION INDIC EIF033
+ WR10E40&CG1  EQU  *                    END OF ITEM WITH KEY='40' EIF033
+                                                            EJECT
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TVL - TRAVELER PRODUCT INFORMATION                     * EIJ959
+ *       KEY = '41'                                             * EIJ959
+ *       THIS IS 1A (AMADEUS) VERSION OF TVL SEGMENT.           * EIJ959
+ *       IT IS SIMILAR TO THE PADIS IMPLEMENTATION GUIDE FOR    * EIJ959
+ *       TKCREQ/RES AND TKTREQ/RES MESSAGES.                    * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10PFD&CG1  DS   CL6    C310 9916     FIRST DATE (DDMMYY)       EIJ959
+ WR10PFM&CG1  DS   CL4         9918     FIRST TIME (HHMM)         EIJ959
+ WR10POL&CG1  DS   CL5    C328 3225     ORIGIN LOCATION           EIJ959
+ WR10PON&CG1  DS   CL17        3224     ORIGIN LOCATION NAME      EIJ959
+ WR10PDL&CG1  DS   CL5    C328 3225     DEST LOCATION             EIJ959
+ WR10PDN&CG1  DS   CL17        3224     DEST LOCATION NAME        EIJ959
+ WR10PMC&CG1  DS   CL3    C306 9906     MARKETING AIRLINE CODE    EIJ959
+ WR10POC&CG1  DS   CL3         9906     OPERATING AIRLINE CODE    EIJ959
+ WR10PCC&CG1  DS   CL3         9906     CODESHARE AIRLINE CODE    EIJ959
+ WR10PFN&CG1  DS   CL4    C308 9908     FLIGHT NUMBER             EIJ959
+ WR10PRB&CG1  DS   CL2         7037     RES BOOKING DESIGNATOR    EIJ959
+ WR10PIC&CG1  DS   CL3         9914     ID CHARACTERISTIC         EIJ959
+ WR10PIE&CG1  DS   CL7         7009     ITEM DESCRIPTION          EIJ959
+ WR10PSC&CG1  DS   CL3    C309 1050     STOPOVER CODE             EIJ959
+ WR10PSI&CG1  DS   CL2    1082          SEGMENT IDENTIFIER        EIJ959
+ WR10PPI&CG1  DS   CL3    7365          PROCESSING INDICATOR      EIJ959
+ WR10E41&CG1  EQU  *                END OF ITEM WITH KEY = '41'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TXD - TAX DETAILS                                      * EIJ959
+ *       KEY = '42'                                             * EIJ959
+ *       PADIS SEGMENT DIRECTORY VERSION.                       * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10TDC&CG1  DS   CL3    5305          CATEGORY                  EIJ959
+ WR10E42&CG1  EQU  *                END OF ITEM WITH KEY = '42'   EIJ959
+                                                            SPACE 2
+ **************************************************************** EIJ959
+ *       TXD - TAX DETAILS                                      * EIJ959
+ *       KEY = '43'                                             * EIJ959
+ **************************************************************** EIJ959
+ *
+              ORG  WR10ORG&CG1
+ WR10TDA&CG1  DS   CL17       C668 5278 AMOUNT                    EIJ959
+ WR10TCC&CG1  DS   CL3             3207 COUNTRY                   EIJ959
+ WR10TCU&CG1  DS   CL3             6345 CURRENCY                  EIJ959
+ WR10TTY&CG1  DS   CL3             5153 TYPE                      EIJ959
+ WR10E43&CG1  EQU  *                END OF ITEM WITH KEY = '43'   EIJ959
+                                                            SPACE 2
+ ***********************************************************************
+ *       COMPLEXING FLIGHT DETAILS                                     *
+ *       KEY = '48'      USED BY SEGMENTS - FDR                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10QFN&CG1 DS   CL4                   MARKETING FLIGHT NUMBER
+ WR10QBP&CG1 DS   CL3                   DEPARTURE POINT
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10QOP&CG1 DS   CL3                   DESTINATION
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10QOC&CG1 DS   CL3                   OPERATING CARRIER CODE
+ WR10QFS&CG1 DS   CL1                   COMPLEXING FLIGHT SUFFIX
+ *R10E48&CG1  EQU  *                    END OF ITEM WITH KEY ='48'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10QFN4&CG1 DS   CL4                  MARKETING FLIGHT NUMBER   EIF033
+ WR10QBP4&CG1 DS   CL3                  DEPARTURE POINT           EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10QOP4&CG1 DS   CL3                  DESTINATION               EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10QOC4&CG1 DS   CL2                  OPERATING CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10QFS4&CG1 DS   CL1                  COMPLEXING FLIGHT SUFFIX  EIF033
+ WR10E48&CG1  EQU  *                    END OF ITEM WITH KEY='48' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       INBOUND FLIGHT DETAILS                                        *
+ *       KEY = '60'      USED BY SEGMENTS - FDQ                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SIC&CG1 DS   0CL3                  SCHEDULED CARRIER CODE
+ WR10IAL&CG1 DS   CL2                   AIRLINE CODE
+             DS   CL1                   SPARE FOR A/L CODE EXPANSION
+ WR10OIC&CG1 DS   CL3                   OPERATING CARRIER CODE
+ WR10IFN&CG1 DS   CL4                   INWARD FLIGHT NUMBER
+ WR10IFS&CG1 DS   CL1                   INWARD FLIGHT SUFFIX
+ WR10IDD&CG1 DS   CL10                  DEPARTURE DATE/TIME (YYMMDDHHMM)
+ WR10IAD&CG1 DS   CL10                  ARRIVAL DATE/TIME (YYMMDDHHMM)
+ WR10IBP&CG1 DS   CL3                   BOARD POINT
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10IOP&CG1 DS   CL3                   OFF POINT
+             DS   CL2                   SPARE FOR CITY CODE EXPANSION
+ WR10ITR&CG1 DS   CL2                   ARRIVAL TERMINAL
+ WR10AIR&CG1 DS   CL1                   TYPE OF TRANSPORT SERVICE
+ *R10E60&CG1  EQU  *                    END OF ITEM WITH KEY ='60'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10SIC4&CG1 DS   0CL17                SCHEDULED CARRIER CODE    EIF033
+ WR10IAL4&CG1 DS   CL2                  AIRLINE CODE              EIF033
+              DS   CL15                 SPARE FOR A/L CODE EXPANS EIF033
+ WR10OIC4&CG1 DS   CL2                  OPERATING CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR A/L CODE EXPANS EIF033
+ WR10IFN4&CG1 DS   CL4                  INWARD FLIGHT NUMBER      EIF033
+ WR10IFS4&CG1 DS   CL1                  INWARD FLIGHT SUFFIX      EIF033
+ WR10IDD4&CG1 DS   CL10                 DEP DATE/TIME (YYMMDDHHMM)EIF033
+ WR10IAD4&CG1 DS   CL10                 ARR DATE/TIME (YYMMDDHHMM)EIF033
+ WR10IBP4&CG1 DS   CL3                  BOARD POINT               EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10IOP4&CG1 DS   CL3                  OFF POINT                 EIF033
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIF033
+ WR10ITR4&CG1 DS   CL2                  ARRIVAL TERMINAL          EIF033
+ WR10AIR4&CG1 DS   CL1                  TYPE OF TRANSPORT SERVICE EIF033
+ WR10E60&CG1  EQU  *                    END OF ITEM WITH KEY='60' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PRODUCT DATE AND TIME - INBOUND/OUTBOUND FLIGHT               *
+ *       KEY = '61'      USED BY SEGMENTS - FDQ (INBOUND FLIGHT) &     *
+ *                                          FDR (OUTBOUND FLIGHT)      *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10IFD3&CG1 DS   CL35   C310  9916    INBOUND FLT - 1ST DATE    EIN340
+ WR10IFT3&CG1 DS   CL4          9918    INBOUND FLT - 1ST TIME    EIN340
+ WR10SDT3&CG1 DS   CL35         9920    INBOUND FLT - 2ND DATE    EIN340
+ WR10DTM3&CG1 DS   CL4          9922    INBOUND FLT - 2ND TIME    EIN340
+ WR10DVR3&CG1 DS   CL1          9954    INBD FLT - DATE VARIATION EIN340
+ WR10E61&CG1  EQU  *                    END OF ITEM WITH KEY='61' EIN340
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       CONSUMER REFERENCE IDENTIFICATION                             *
+ *       KEY = '62'      USED BY SEGMENTS - CRI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10CRQ3&CG1 DS   CL3    C967  1153    CRI REFERENCE QUALIFIER   EIN340
+ WR10CRN3&CG1 DS   CL35         1154    CRI REFERENCE NUMBER      EIN340
+ WR10CPN3&CG1 DS   CL35         3036    CRI PARTY NAME            EIN340
+ WR10TRN3&CG1 DS   CL10         9944    TRAVELLER REFERENCE NBR   EIN340
+ WR10E62&CG1  EQU  *                    END OF ITEM WITH KEY='62' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       BAG TAG DEFINITION                                            *
+ *       KEY = '63'      USED BY SEGMENTS - BTI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10BCC3&CG1 DS   CL17   C029  3127    BAG TAG SEG CARRIER CODE  EIN340
+ WR10TSN3&CG1 DS   CL16         9835    BAG TAG SERIAL NBR        EIN340
+ WR10NCS3&CG1 DS   CL3          9836    NBR OF CONSECUTIVE SERIAL EIN340
+ WR10BDS3&CG1 DS   CL3          3259    DESTINATION CODE          EIN340
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIN340
+ WR10BAN3&CG1 DS   CL3          3810    AIRLINE CODE NUMBER       EIN340
+ WR10BOI3&CG1 DS   CL1          9885    ONLINE/INTERLINE IND      EIN340
+ WR10E63&CG1  EQU  *                    END OF ITEM WITH KEY='63' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       BAG TAG STUB INFORMATION                                      *
+ *       KEY = '64'      USED BY SEGMENTS - BTI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10BSC3&CG1 DS   CL17   C693  3127    STUB SEGMENT CARRIER CODE EIN340
+ WR10BSF3&CG1 DS   CL4          3802    STUB FLIGHT NUMBER        EIN340
+ WR10BSD3&CG1 DS   CL10         2281    STUB FLIGHT LOCAL DATE    EIN340
+ WR10SDS3&CG1 DS   CL3          3259    STUB FLIGHT DESTINATION   EIN340
+              DS   CL2                  SPARE FOR CITY COD EXPANS EIN340
+ WR10BCL3&CG1 DS   CL1          9800    STUB CLASS                EIN340
+ WR10BSS3&CG1 DS   CL1          9801    STUB OPERATIONAL SUFFIX   EIN340
+ WR10E64&CG1  EQU  *                    END OF ITEM WITH KEY='64' EIN340
+                                                            SPACE 2
+                                                            EJECT
+ ***********************************************************************
+ *       PASSENGER API DETAILS                                         *
+ *       KEY = '65'      USED BY SEGMENTS - PAP & UAP                  *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10PGD3&CG1 DS   CL3    C060  6353    PASSENGER API TYPE (A/IN) EIN340
+ WR10APS3&CG1 DS   CL64         3808    PASSENGER API SURNAME     EIN340
+ WR10APF3&CG1 DS   CL64         3809    PASSENGER API 1ST NAME    EIN340
+ WR10DBR3&CG1 DS   CL35         9916    PAX API DATE OF BIRTH     EIN340
+ WR10ARI3&CG1 DS   CL1          9869    API REG GRANTED IND       EIN340
+ WR10PMN3&CG1 DS   CL70         9754    PASSENGER MIDDLE NAME     EIN340
+ WR10APC3&CG1 DS   CL3          3207    PAX API COUNTRY CODE (NAT)EIN340
+ WR10LAT3&CG1 DS   XL2          4440    LENGTH API FREE TEXT      EIN340
+ WR10APT3&CG1 DS   CL1                  API FREE TEXT             EIN340
+ WR10E65&CG1  EQU  *                    END OF ITEM WITH KEY='65' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER API CONTACT DATA                                    *
+ *       KEY = '67'      USED BY SEGMENTS - PAP & UAP                  *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10PCN3&CG1 DS   CL64   C701  3808    PAX CONTACT SURNAME       EIN340
+ WR10PCF3&CG1 DS   CL64         3809    PAX CONTACT 1ST NAME      EIN340
+ WR10PCT3&CG1 DS   CL25         3148    PAX CONTACT TELEPHONE NBR EIN340
+ WR10LPX3&CG1 DS   XL2          4440    LENGTH CONTACT FREE TEXT  EIN340
+ WR10PCX3&CG1 DS   CL1                  PAX CONTACT FREE TEXT     EIN340
+ WR10E67&CG1  EQU  *                    END OF ITEM WITH KEY='67' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       FLIGHT SEGMENT DETAILS                                        *
+ *       KEY = '68'      USED BY SEGMENTS - FSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10BRD&CG1 DS   CL4                   LOCAL BOARDING TIME
+ WR10TER&CG1 DS   CL2                   DEPARTURE TERMINAL
+ WR10GAT&CG1 DS   CL6                   GATE
+ WR10POS&CG1 DS   CL6                   AIRCRAFT POSITION
+ WR10FS1&CG1 DS   CL1                   1ST FLIGHT SERVICE CODE
+ WR10FS2&CG1 DS   CL1                   2ND FLIGHT SERVICE CODE
+ WR10DLY&CG1 DS   CL2                   FLIGHT DELAY REASON CODE
+ WR10API4&CG1 DS  CL1                   API REQUIREMENT INDICATOR EIF033
+ WR10E68&CG1  EQU  *                    END OF ITEM WITH KEY = '68'
+                                                            SPACE 2
+             ORG  WR10E26&CG1           FREE TEXT
+ WR10E69&CG1  EQU  *                    END OF ITEM WITH KEY = '69'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER API DOCUMENT ID DATA                                *
+ *       KEY = '6B'      USED BY SEGMENTS - PAP & UAP                  *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10DOQ3&CG1 DS   CL3    C700  7365    DOCUMENT QUALIFIER        EIN340
+ WR10DON3&CG1 DS   CL35         1004    DOCUMENT NUMBER           EIN340
+ WR10DIS3&CG1 DS   CL3          3207    DOCUMENT CTRY OF ISSUE    EIN340
+ WR10DOI3&CG1 DS   CL1          9813    CONFIRMATION INDICATOR    EIN340
+ WR10DOT3&CG1 DS   CL70         4440    DOCUMENT ID FREE TEXT     EIN340
+ WR10EXD3&CG1 DS   CL35         2380    DOC EXPIRATION DATE       EIN340
+ WR10DGN3&CG1 DS   CL3          6353    PASSENGER GENDER          EIN340
+ WR10SOI3&CG1 DS   CL3          9890    DOC SOURCE OF INFORMATION EIN340
+ WR10SEN3&CG1 DS   CL35         3228    COUNTRY SUB-ENTITY NAME   EIN340
+ WR10CIS3&CG1 DS   CL35         3164    DOC CITY OF ISSUE         EIN340
+ WR10ISO3&CG1 DS   CL35         3036    DOC ISSUING ORGANISATION  EIN340
+ WR10ISD3&CG1 DS   CL35         2380    DOC ISSUE DATE            EIN340
+ WR10DPS3&CG1 DS   CL64         3808    DOC PAX SURNAME           EIN340
+ WR10DFN3&CG1 DS   CL64         3809    DOC PAX FIRST NAME        EIN340
+ WR10LDM3&CG1 DS   XL2          9754    LENGTH PAX MIDDLE NAME    EIN340
+ WR10DMN3&CG1 DS   CL1                  DOC PAX MIDDLE NAME       EIN340
+ WR10E6B&CG1  EQU  *                    END OF ITEM WITH KEY='6B' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER API DOCUMENT ID DATA - CONFIRMATION IND.            *
+ *       KEY = '6D'      USED BY SEGMENTS - PAP & UAP                  *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10DCI3&CG1 DS   CL1    C700  9813    API DOC CONFIRMATION IND  EIN340
+ WR10E6D&CG1  EQU  *                    END OF ITEM WITH KEY='6D' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       ADDRESS DETAILS - ACTION AND ADDRESS DETAILS                  *
+ *       KEY = '6E'      USED BY SEGMENTS - ADD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10ADC3&CG1 DS   CL1    C031  9858    UPDATE ACTION CODE        EIN340
+ WR10ADP3&CG1 DS   CL3    C032  3299    ADDRESS PURPOSE CODE      EIN340
+ WR10STR3&CG1 DS   CL35         3042    STREET, NBR / PO BOX      EIN340
+ WR10CTY3&CG1 DS   CL35         3164    CITY NAME                 EIN340
+ WR10CTI3&CG1 DS   CL9          3229    COUNTRY SUB-ENTITY ID     EIN340
+ WR10CTN3&CG1 DS   CL35         3228    COUNTRY SUB-ENTITY NAME   EIN340
+ WR10CCO3&CG1 DS   CL3          3207    COUNTRY CODED             EIN340
+ WR10PCI3&CG1 DS   CL9          3251    POSTCODE ID               EIN340
+ WR10ADL3&CG1 DS   XL2          4440    LENGTH API ADDR FREE TEXT EIN340
+ WR10ADT3&CG1 DS   CL1                  API ADDRESS FREE TEXT     EIN340
+ WR10E6E&CG1  EQU  *                    END OF ITEM WITH KEY='6E' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       ADDRESS DETAILS - ACTION REQUEST                              *
+ *       KEY = '6F'      USED BY SEGMENTS - ADD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10ARN3&CG1 DS   CL3    C031  1229    ACTION REQUEST/NOTIFICAT. EIN340
+ WR10E6F&CG1  EQU  *                    END OF ITEM WITH KEY='6F' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SELECTION DETAILS                                   *
+ *       KEY = '70'      USED BY SEGMENTS - SPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SBC&CG1 DS   CL1                   PAX BOOKING CLASS
+ WR10SSF&CG1 DS   CL3                   NUMBER IN SURNAME/FAMILY
+ WR10SSS&CG1 DS   CL4                   SPECIFIC SEAT SELECTION
+ WR10SFR&CG1 DS   CL4                   FREE SEATING REF IDENTIFIER
+ WR10SUR&CG1 DS   CL10                  UNIQUE PAX REFERENCE
+ WR10SPQ&CG1 DS   CL4                   CHECK-IN SEQUENCE NUMBER
+ WR10SIQ&CG1 DS   CL4                   INF CHECK-IN SEQUENCE NUMBER
+ WR10SPB&CG1 DS   CL5                   BOARDING SECURITY NUMBER
+ WR10SIB&CG1 DS   CL5                   INF BOARDING SECURITY NUMBER
+ WR10SSP&CG1 DS   CL9                   PNR LOCATOR IN SENDING SYSTEM
+ WR10SRP&CG1 DS   CL9                   PNR LOCATOR IN RECIEVING SYSTEM
+ WR10SBA&CG1 DS   CL3                   CARRIER CODE OF BOOKING SYSTEM
+ WR10SBP&CG1 DS   CL9                   PNR LOCATOR IN BOOKING SYSTEM
+ WR10SIA&CG1 DS   CL2                   ISSUING CARRIER CODE
+             DS   CL1                   SPARE FOR CARRIER CODE EXPANSION
+ WR10SIN&CG1 DS   CL16                  BAGTAG NUMBER
+ WR10STK&CG1 DS   CL15                  PAX TICKET NUMBER
+ WR10SPL&CG1 DS   XL2                   LENGTH PAX SURNAME
+ WR10SPN&CG1 DS   CL1                   PAX SURNAME
+ *R10E70&CG1  EQU  *                    END OF ITEM WITH KEY ='70'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10SBC4&CG1 DS   CL1                  PAX BOOKING CLASS         EIF033
+ WR10SSF4&CG1 DS   CL3                  NUMBER IN SURNAME/FAMILY  EIF033
+ WR10SSS4&CG1 DS   CL4                  SPECIFIC SEAT SELECTION   EIF033
+ WR10SFR4&CG1 DS   CL4                  FREE SEAT REF IDENTIFIER  EIF033
+ WR10PRS4&CG1 DS   CL10                 PAX ID RESPONDING SYSTEM  EIF033
+ WR10IRS4&CG1 DS   CL10                 INF ID RESPONDING SYTEM   EIF033
+ WR10PQS4&CG1 DS   CL10                 PAX ID QUERYING SYSTEM    EIF033
+ WR10IQS4&CG1 DS   CL10                 INF ID QUERYING SYSTEM    EIF033
+ WR10PTS4&CG1 DS   CL10                 PAX ID THIRD PARTY SYSTEM EIF033
+ WR10ITS4&CG1 DS   CL10                 INF ID THIRD PARTY SYSTEM EIF033
+ WR10SPB4&CG1 DS   CL5                  BOARDING SECURITY NUMBER  EIF033
+ WR10SIB4&CG1 DS   CL5                  INF BOARDING SECURITY NO. EIF033
+ WR10SSP4&CG1 DS   CL9                  PNR LOCATOR SENDING SYS   EIF033
+ WR10SRP4&CG1 DS   CL9                  PNR LOCATOR RECIEVING SYS EIF033
+ WR10SBA4&CG1 DS   CL2                  CARRIER CODE OF BKG SYSTEMEIF033
+              DS   CL15                 SPARE-CARRIER CODE EXPANS EIF033
+ WR10SBP4&CG1 DS   CL9                  PNR LOCATOR IN BKG SYSTEM EIF033
+ WR10SIA4&CG1 DS   CL2                  ISSUING CARRIER CODE      EIF033
+              DS   CL15                 SPARE-CARRIER CODE EXPANS EIF033
+ WR10SIN4&CG1 DS   CL16                 BAGTAG NUMBER             EIF033
+ WR10STK4&CG1 DS   CL15                 PAX TICKET NUMBER         EIF033
+ WR10SPL4&CG1 DS   XL2                  LENGTH PAX SURNAME        EIF033
+ WR10SPN4&CG1 DS   CL1                  PAX SURNAME               EIF033
+ WR10E70&CG1  EQU  *                    END OF ITEM WITH KEY='70' EIF033
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       GIVEN NAME SELECTION DETAILS                                  *
+ *       KEY = '71'      USED BY SEGMENTS - SPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SGL&CG1 DS   XL2                   LENGTH PAX GIVEN NAME/INITIALS
+ WR10SPG&CG1 DS   CL1                   PAX GIVEN NAME/INITIALS
+ WR10E71&CG1  EQU  *                    END OF ITEM WITH KEY = '71'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER PERSONAL DETAILS                                    *
+ *       KEY = '80'      USED BY SEGMENTS - PPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10MFC&CG1 DS   CL1                   PAX GENDER/TYPE
+ WR10INF&CG1 DS   CL1                   INFANT ACCOMPANYING INDICATOR
+ WR10PWT&CG1 DS   CL4                   PAX WEIGHT
+ WR10URP&CG1 DS   CL10                  UNIQUE PAX REFERENCE
+ WR10PSQ&CG1 DS   CL4                   CHECK-IN SEQUENCE NUMBER
+ WR10ISQ&CG1 DS   CL4                   INF CHECK-IN SEQUENCE NUMBER
+ WR10SFC&CG1 DS   CL2                   SURNAME/FAMILYNAME CONNECT
+ WR10PWC&CG1 DS   CL2                   PAX NBR WITHIN CONNECTION
+ WR10COM&CG1 DS   CL1                   COMPLEXING PAX INDICATION
+ WR10PSL&CG1 DS   XL2                   LENGTH PAX SURNAME
+ WR10PSN&CG1 DS   CL1                   PAX SURNAME (MAX 64 CHARS)
+ *R10E80&CG1  EQU  *                    END OF ITEM WITH KEY ='80'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10MFC4&CG1 DS   CL1                  PAX GENDER/TYPE           EIF033
+ WR10INF4&CG1 DS   CL1                  INFANT ACCOMPANYING IND   EIF033
+ WR10PWT4&CG1 DS   CL4                  PAX WEIGHT                EIF033
+ WR10PIR4&CG1 DS   CL10                 PAX ID RESPONDING SYSTEM  EIF033
+ WR10IIR4&CG1 DS   CL10                 INF ID RESPONDING SYTEM   EIF033
+ WR10IPQ4&CG1 DS   CL10                 PAX ID QUERYING SYSTEM    EIF033
+ WR10IIQ4&CG1 DS   CL10                 INF ID QUERYING SYSTEM    EIF033
+ WR10PIT4&CG1 DS   CL10                 PAX ID THIRD PARTY SYSTEM EIF033
+ WR10IIT4&CG1 DS   CL10                 INF ID THIRD PARTY SYSTEM EIF033
+ WR10SFC4&CG1 DS   CL2                  SURNAME/FAMILYNAME CONNECTEIF033
+ WR10PWC4&CG1 DS   CL2                  PAX NBR WITHIN CONNECTION EIF033
+ WR10COM4&CG1 DS   CL1                  COMPLEXING PAX INDICATION EIF033
+ WR10PSL4&CG1 DS   XL2                  LENGTH PAX SURNAME        EIF033
+ WR10PSN4&CG1 DS   CL1                  PAX SURNAME (MAX 64 CHARS)EIF033
+ WR10E80&CG1  EQU  *                    END OF ITEM WITH KEY ='80'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER GIVEN NAME DETAILS                                  *
+ *       KEY = '81'      USED BY SEGMENTS - PPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10PGL&CG1 DS   XL2                   LENGTH PAX GIVEN NAME/INITIALS
+ WR10PGN&CG1 DS   CL1                   PAX GIVEN NAME/INITIALS
+ WR10E81&CG1  EQU  *                    END OF ITEM WITH KEY = '81'
+                                                            SPACE 2
+ ***********************************************************************
+ *       INFANT PASSENGER SURNAME                                      *
+ *       KEY = '82'      USED BY SEGMENTS - PPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10ISL&CG1 DS   XL2                   LENGTH INFANT SURNAME
+ WR10ISN&CG1 DS   CL1                   INFANT SURNAME
+ WR10E82&CG1  EQU  *                    END OF ITEM WITH KEY = '82'
+                                                            SPACE 2
+ ***********************************************************************
+ *       INFANT PASSENGER GIVEN NAME                                   *
+ *       KEY = '83'      USED BY SEGMENTS - PPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10IGL&CG1 DS   XL2                   LENGTH INFANT GIVEN NAME
+ WR10IGN&CG1 DS   CL1                   INFANT GIVEN NAME/INITIALS
+ WR10E83&CG1  EQU  *                    END OF ITEM WITH KEY = '83'
+                                                            SPACE 2
+ ***********************************************************************
+ *       CHECKED IN INFORMATION                                        *
+ *       KEY = '85'      USED BY SEGMENTS - PFD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SST&CG1 DS   CL4                   SPECIFIC SEAT
+ WR10FSR&CG1 DS   CL4                   FREESEATING REFERENCE IDENTIFIER
+ WR10SNI&CG1 DS   CL1                   NO SMOKING INDICATOR
+ WR10SRM&CG1 DS   CL1                   SEAT REQUEST MET
+ WR10BST&CG1 DS   CL5                   PAX BOARDING SECURITY INDICATOR
+ WR10IST&CG1 DS   CL5                   INF BOARDING SECURITY INDICATOR
+ WR10BPI&CG1 DS   CL1                   REISSUE BOARDING PASS
+ WR10CDS&CG1 DS   CL1                   CABIN CLASS DESIGNATOR
+ WR10CNM&CG1 DS   CL1                   NUMERICAL VALUE OF CABIN CLASS
+ WR10SAD&CG1 DS   CL5                   SEGMENT AIRPORT OF DEPARTURE
+ WR10SAA&CG1 DS   CL5                   SEGMENT AIRPORT OF ARRIVAL
+ WR10EQC&CG1 DS   CL3                   EQUIPMENT CODE
+ WR10FCL&CG1 DS   XL2                   LENGTH OF FREETEXT C/CLS  EII270
+ WR10FCC&CG1 DS   CL1                   FREETEXT CABIN CLASS
+ WR10E85&CG1  EQU  *                    END OF ITEM WITH KEY = '85'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER RESERVATION DETAILS                                 *
+ *       KEY = '86'      USED BY SEGMENTS - PRD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10CLC&CG1 DS   CL1                   PAX BOOKING CLASS
+ WR10CLN&CG1 DS   CL1                   NUMERICAL VALUE OF CABIN CLASS
+ WR10RBS&CG1 DS   CL2                   RESERVATIONS BOOKING STATUS
+ WR10SRL&CG1 DS   CL9                   PNR LOCATOR IN SENDING SYSTEM
+ WR10TKT&CG1 DS   CL15                  PAX TICKET NUMBER
+ WR10APR&CG1 DS   CL2                   ALPHA PARTY REFERENCE
+ WR10NPR&CG1 DS   CL3                   #PAX IN SAME PNR
+ WR10RRL&CG1 DS   CL9                   PNR LOCATOR IN RECIEVING SYSTEM
+ WR10BRC&CG1 DS   CL3                   CARRIER CODE IN BOOKING SYSTEM
+ WR10BRL&CG1 DS   CL9                   PNR LOCATOR IN BOOKING SYSTEM
+ *R10E86&CG1  EQU  *                    END OF ITEM WITH KEY ='86'EIF033
+                                                            SPACE 2
+              ORG  WR10BRC&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10BRC4&CG1 DS   CL2                  CARRIER CODE IN BKG SYSTEMEIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10BRL4&CG1 DS   CL9                  PNR LOCATOR IN BKG SYSTEM EIF033
+ WR10E86&CG1  EQU  *                    END OF ITEM WITH KEY='86' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SEATING DETAILS                                     *
+ *       KEY = '88'      USED BY SEGMENTS - PSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SMK&CG1 DS   CL1                   NO SMOKING INDICATOR
+ WR10SEA&CG1 DS   CL4                   SPECIFIC SEAT REQUEST
+ WR10ROW&CG1 DS   CL3                   FIRST ROW OF SEAT REQUEST RANGE
+ WR10NRW&CG1 DS   CL3                   #ROWS IN REQUESTED SEAT RANGE
+ WR10SCA&CG1 DS   CL1                   SEAT ADJUSTMENT COUNT
+ WR10RSA&CG1 DS   CL2                   CODED REASON FOR ADJUSTMENT
+ WR10WSA&CG1 DS   CL4                   WEIGHT ACCORDED TO ADJUSTMENT
+ WR10E88&CG1  EQU  *                    END OF ITEM WITH KEY = '88'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER BAGGAGE DETAILS                                     *
+ *       KEY = '89'      USED BY SEGMENTS - PBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10NHB&CG1 DS   CL3                   #CHECKED BAGS
+ WR10WHB&CG1 DS   CL4                   WEIGHT CHECKED BAGS
+ WR10NCB&CG1 DS   CL3                   #PIECES CABIN BAGGAGE
+ WR10WCB&CG1 DS   CL4                   WEIGHT CABIN BAGGAGE
+ WR10IPB&CG1 DS   CL1                   POOLED BAGGAGE INDICATION
+ *R10E89&CG1  EQU  *                    END OF ITEM WITH KEY ='89'EIF033
+                                                            SPACE 2
+              ORG  WR10IPB&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10PBI4&CG1 DS   CL3                  POOL INDICATOR DEFAULT=NP EIF033
+ WR10E89&CG1  EQU  *                    END OF ITEM WITH KEY='89' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER BAG TAG DETAILS                                     *
+ *       KEY = '8A'      USED BY SEGMENTS - PBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10CBT&CG1 DS   CL2                   ISSUING CARRIER CODE
+             DS   CL1                   SPARE FOR EXPANSION
+ WR10BTN&CG1 DS   CL16                  BAGTAG NUMBER
+ WR10NCT&CG1 DS   CL3                   #CONSECUTIVE TAGS
+ WR10FDS&CG1 DS   CL3                   FINAL DESTINATION OF TAGS
+             DS   CL2                   SPARE FOR EXPANSION
+ WR10IAC&CG1 DS   CL3                   3DIGIT IATA CODE FOR TAG ISSUER
+ WR10OIB&CG1 DS   CL1                   ONLINE/INTERLINE TAG INDICATION
+                                                            SPACE
+ *
+ *  THIS ITEM IS REPEATED FOR EACH NON-CONSECUTIVE BAGTAG FOR THIS PAX
+ *
+                                                            SPACE
+ *R10E8A&CG1  EQU  *                    END OF ITEM WITH KEY ='8A'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10CBT4&CG1 DS   CL2                  ISSUING CARRIER CODE      EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10BTN4&CG1 DS   CL16                 BAGTAG NUMBER             EIF033
+ WR10NCT4&CG1 DS   CL3                  #CONSECUTIVE TAGS         EIF033
+ WR10FDS4&CG1 DS   CL3                  FINAL DESTINATION OF TAGS EIF033
+              DS   CL2                  SPARE FOR EXPANSION       EIF033
+ WR10IAC4&CG1 DS   CL3                  3DIGIT CODE FOR TAG ISSUEREIF033
+ WR10OIB4&CG1 DS   CL1                  ON/INTERLINE TAG INDIC    EIF033
+                                                            SPACE
+ *
+ *  THIS ITEM IS REPEATED FOR EACH NON-CONSECUTIVE BAGTAG FOR THIS PAX
+ *
+                                                            SPACE
+ WR10E8A&CG1  EQU  *                    END OF ITEM WITH KEY='8A' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER CONNECTION DETAILS                                  *
+ *       KEY = '8B'      USED BY SEGMENTS - PCD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10CAL&CG1 DS   CL2                   AIRLINE CODE
+             DS   CL1                   SPARE FOR EXPANSION
+ WR10COC&CG1 DS   CL2                   OPERATING CARRIER CODE
+             DS   CL1                   SPARE FOR EXPANSION
+ WR10CFN&CG1 DS   CL4                   ONWARD FLIGHT NUMBER
+ WR10CFS&CG1 DS   CL1                   ONWARD FLIGHT SUFFIX
+ WR10COP&CG1 DS   CL3                   OFF POINT
+             DS   CL2                   SPARE FOR EXPANSION
+ WR10CAD&CG1 DS   CL10                  ARRIVAL DATE/TIME (YYMMDDHHMM)
+ WR10CDD&CG1 DS   CL10                  DEPARTURE DATE/TIME (YYMMDDHHMM)
+ WR10CBP&CG1 DS   CL3                   BOARD POINT
+             DS   CL2                   SPARE FOR EXPANSION
+ WR10RCL&CG1 DS   CL1                   RESERVATIONS BOOKING DESIGNATOR
+ WR10CST&CG1 DS   CL2                   RESERVATIONS STATUS
+ *R10E8B&CG1  EQU  *                    END OF ITEM WITH KEY ='8B'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10CAL4&CG1 DS   CL2                  AIRLINE CODE              EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10COC4&CG1 DS   CL2                  OPERATING CARRIER CODE    EIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10CFN4&CG1 DS   CL4                  ONWARD FLIGHT NUMBER      EIF033
+ WR10CFS4&CG1 DS   CL1                  ONWARD FLIGHT SUFFIX      EIF033
+ WR10COP4&CG1 DS   CL3                  OFF POINT                 EIF033
+              DS   CL2                  SPARE FOR EXPANSION       EIF033
+ WR10CAD4&CG1 DS   CL10                 ARR DATE/TIME (YYMMDDHHMM)EIF033
+ WR10CDD4&CG1 DS   CL10                 DEP DATE/TIME (YYMMDDHHMM)EIF033
+ WR10CBP4&CG1 DS   CL3                  BOARD POINT               EIF033
+              DS   CL2                  SPARE FOR EXPANSION       EIF033
+ WR10RCL4&CG1 DS   CL1                  RES BOOKING DESIGNATOR    EIF033
+ WR10CST4&CG1 DS   CL2                  RESERVATIONS STATUS       EIF033
+ WR10E8B&CG1  EQU  *                    END OF ITEM WITH KEY='8B' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SERVICE DETAILS                                     *
+ *       KEY = '8C'      USED BY SEGMENTS - PSI                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SSR&CG1 DS   CL4                   SPECIAL SERVICE REQUEST CODE
+ WR10FFA&CG1 DS   CL3                   OWNING CARRIER OF FLYER SCHEME
+ WR10FFN&CG1 DS   CL25                  FREQUENT FLYER IDENTIFIER
+ WR10PAG&CG1 DS   CL3                   PASSENGER AGE
+ WR10NPS&CG1 DS   CL3                   NUMBER OF PIECES SSR ITEMS
+ WR10WPS&CG1 DS   CL4                   WEIGHT COMBINED PIECES SSR ITEMS
+                                                            SPACE
+ *
+ *  THIS ITEM IS REPEATED FOR EACH SPECIAL SERVICE REQUEST
+ *
+                                                            SPACE
+ *R10E8C&CG1  EQU  *                    END OF ITEM WITH KEY ='8C'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10SSR4&CG1 DS   CL4                  SPECIAL SERVICE RQST CODE EIF033
+ WR10FFA4&CG1 DS   CL2                  OWNING A/L OF FLYER SCHEMEEIF033
+              DS   CL15                 SPARE FOR EXPANSION       EIF033
+ WR10FFN4&CG1 DS   CL25                 FREQUENT FLYER IDENTIFIER EIF033
+ WR10PAG4&CG1 DS   CL3                  PASSENGER AGE             EIF033
+ WR10NPS4&CG1 DS   CL3                  NBR OF PIECES SSR ITEMS   EIF033
+ WR10WPS4&CG1 DS   CL4                  COMBINED WEIGHT ALL PIECESEIF033
+                                                            SPACE
+ *
+ *  THIS ITEM IS REPEATED FOR EACH SPECIAL SERVICE REQUEST
+ *
+                                                            SPACE
+ WR10E8C&CG1  EQU  *                    END OF ITEM WITH KEY='8C' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SERVICE DETAILS                                     *
+ *       KEY = '8D'      USED BY SEGMENTS - PSI                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10OSL&CG1 DS   XL2                   LENGTH OTHER SERVICE INFORMATION
+ WR10OSI&CG1 DS   CL1                   OTHER SERVICE INFORMATION
+ *                                      MAX 250 CHARS
+ WR10E8D&CG1  EQU  *                    END OF ITEM WITH KEY = '8D'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SERVICE DETAILS                                     *
+ *       KEY = '8E'      FREE TEXT USED BY SEGMENT - PSI               *
+ ***********************************************************************
+                                                            SPACE 2
+ *EIJ835     ORG  WR10E26&CG1
+             ORG  WR10ORG&CG1                                     EIJ835
+ WR10SSL&CG1 DS   XL2                   LENGTH SSR FREETEXT       EIJ835
+ WR10SRT&CG1 DS   CL1                   SSR DETAILS FREETEXT      EIJ835
+ WR10E8E&CG1  EQU  *                    END OF ITEM WITH KEY = '8E'
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER FREQUENT FLYER DETAILS                              *
+ *       KEY = '8F'      USED BY SEGMENTS - PSI                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10E8F&CG1  EQU  *                    END OF ITEM WITH KEY = '8F'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT CHARACTERISTICS                                          *
+ *       KEY = '90'      USED BY SEGMENTS - PFD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SCR&CG1 DS   CL2                   SEAT CHARACTERISTIC
+ WR10E90&CG1  EQU  *                    END OF ITEM WITH KEY = '90'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT CHARACTERISTICS                                          *
+ *       KEY = '91'      USED BY SEGMENTS - PSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10IZN&CG1 DS   CL2                   SPECIFICALLY REQUIRED CHAR
+ WR10E91&CG1  EQU  *                    END OF ITEM WITH KEY = '91'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT COLUMN                                                   *
+ *       KEY = '92'      USED BY SEGMENTS - PSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10COL&CG1 DS   CL1                   PREFERRED SEAT COLUMN
+ WR10E92&CG1  EQU  *                    END OF ITEM WITH KEY = '92'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       POOLED BAGGAGE REFERENCE                                EIF033*
+ *       KEY = '93'      USED BY SEGMENTS - PBD                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10LPR4&CG1 DS   XL2                  LENGTH POOL REFERENCE     EIF033
+ WR10PBR4&CG1 DS   CL1                  POOL REFERENCE            EIF033
+ WR10E93&CG1  EQU  *                    END OF ITEM WITH KEY='93' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       API PASSENGER DETAILS                                   EIF033*
+ *       KEY = '94'      USED BY SEGMENTS - PSI                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10DOB4&CG1 DS   CL35                 DATE OF BIRTH             EIF033
+ WR10PPN4&CG1 DS   CL35                 PASSPORT NUMBER           EIF033
+ WR10NAT4&CG1 DS   CL3                  NATIONALITY               EIF033
+ WR10DRG4&CG1 DS   CL1                  API DATA REG GRANTED IND  EIF033
+ WR10ASL4&CG1 DS   XL2                  LENGTH API SURNAME        EIF033
+ WR10ASN4&CG1 DS   CL1                  API SURNAME VERSION       EIF033
+ WR10E94&CG1  EQU  *                    END OF ITEM WITH KEY='94' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       API PASSENGER DETAILS                                   EIF033*
+ *       KEY = '95'      USED BY SEGMENTS - PSI                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10FNL4&CG1 DS   XL2                  LENGTH API FIRST NAME     EIF033
+ WR10FNM4&CG1 DS   CL1                  API FIRST NAME VERSION    EIF033
+ WR10E95&CG1  EQU  *                    END OF ITEM WITH KEY='95' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       API PASSENGER DETAILS                                    EIH790
+ *       KEY = '96'      API FREE TEXT USED BY SEGMENT - PSI      EIH790
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E26&CG1                                     EIH790
+ WR10E96&CG1  EQU  *                  END OF ITEM WITH KEY = '96' EIH790
+                                                            SPACE 2
+ ***********************************************************************
+ *       BAR CODE AND PASSENGER PRIORITY INFORMATION             EIH851*
+ *       KEY = '9A'      USED BY SEGMENTS - PFD                  EIH851*
+ *                       EDIFACT VERSION  - 91:1 AND 94:1        EIH851*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIH851
+ WR10BCD&CG1  DS   CL8                  BAR CODE FOR BOARD PASS   EIH851
+ WR10PLT&CG1  DS   XL2                  LTH OF PAX PRIORITY INFO  EIH851
+ WR10PFO&CG1  DS   CL1                  PAX PRIORITY (MAX 21 CHAR)EIH851
+ WR10E9A&CG1  EQU  *                    END OF ITEM WITH KEY='9A' EIH851
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE PERSONAL DETAILS                                       *
+ *       KEY = 'A0'      USED BY SEGMENTS - UPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10URP&CG1
+ WR10UPW&CG1 DS   CL1                   UPDATE PAX WEIGHT
+ WR10UPL&CG1 DS   XL2                   LENGTH PAX SURNAME
+ WR10UPN&CG1 DS   CL1                   PAX SURNAME (MAX 64 CHARS)
+ *R10EA0&CG1  EQU  *                    END OF ITEM WITH KEY ='A0'EIF033
+                                                            SPACE 2
+              ORG  WR10PIT4&CG1         EDIFACT VERSION 94:1      EIF033
+ WR10UPW4&CG1 DS   CL1                  UPDATE PAX WEIGHT         EIF033
+ WR10UPL4&CG1 DS   XL2                  LENGTH PAX SURNAME        EIF033
+ WR10UPN4&CG1 DS   CL1                  PAX SURNAME (MAX 64 CHARS)EIF033
+ WR10EA0&CG1  EQU  *                    END OF ITEM WITH KEY= 'A0'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE PASSENGER GIVEN NAME                                   *
+ *       KEY = 'A1'      USED BY SEGMENTS - UPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E81&CG1
+ WR10EA1&CG1  EQU  *                    END OF ITEM WITH KEY = 'A1'
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE INFANT PASSENGER SURNAME                               *
+ *       KEY = 'A2'      USED BY SEGMENTS - UPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E82&CG1
+ WR10EA2&CG1  EQU  *                    END OF ITEM WITH KEY = 'A2'
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE INFANT GIVEN NAME                                      *
+ *       KEY = 'A3'      USED BY SEGMENTS - UPD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E83&CG1
+ WR10EA3&CG1  EQU  *                    END OF ITEM WITH KEY = 'A3'
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE RESERVATIONS DETAILS                                   *
+ *       KEY = 'A6'      USED BY SEGMENTS - URD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10APR&CG1
+ WR10EA6&CG1  EQU  *                    END OF ITEM WITH KEY = 'A6'
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE SEAT REQUEST DETAILS                                   *
+ *       KEY = 'A8'      USED BY SEGMENTS - USD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E88&CG1
+ WR10USD&CG1 DS   CL1                   UPDATE SEAT DETAILS CODE
+ WR10EA8&CG1  EQU  *                    END OF ITEM WITH KEY = 'A8'
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE BAGGAGE DETAILS                                        *
+ *       KEY = 'A9'      USED BY SEGMENTS - UBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E89&CG1
+ WR10UHB&CG1 DS   CL1                   UPDATE HOLD BAGGAGE COUNT
+ WR10UCB&CG1 DS   CL1                   UPDATE CABIN BAGGAGE COUNT
+ *R10EA9&CG1  EQU  *                    END OF ITEM WITH KEY ='A9'EIF033
+                                                            SPACE 2
+              ORG  WR10E89&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10UHB4&CG1 DS   CL1                  UPDATE HOLD BAGGAGE COUNT EIF033
+ WR10UCB4&CG1 DS   CL1                  UPDATE CABIN BAGGAGE COUNTEIF033
+ WR10UPB4&CG1 DS   CL1                  UPDATE ACTION-POOLED BAGS EIF033
+ WR10EA9&CG1  EQU  *                    END OF ITEM WITH KEY= 'A9'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE BAG TAG DETAILS                                        *
+ *       KEY = 'AA'      USED BY SEGMENTS - UBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E8A&CG1
+ WR10UBT&CG1 DS   CL1                   UPDATE BAGTAGS CODE
+ *R10EAA&CG1  EQU  *                    END OF ITEM WITH KEY ='AA'EIF033
+                                                            SPACE 2
+              ORG  WR10E8A&CG1          EDIFACT VERSION 94:1      EIF033
+ WR10UBT4&CG1 DS   CL1                  UPDATE BAGTAGS CODE       EIF033
+ WR10EAA&CG1  EQU  *                    END OF ITEM WITH KEY ='AA'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE INBOUND FLIGHT DETAILS                                 *
+ *       KEY = 'AB'      USED BY SEGMENTS - UIF                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10CDD&CG1
+ WR10UTR&CG1 DS   CL2                   INBOUND TERMINAL OF ARRIVAL
+ WR10ISI&CG1 DS   CL1                   INBOUND SERVICE TYPE INDICATION
+ *R10EAB&CG1  EQU  *                    END OF ITEM WITH KEY ='AB'EIF033
+                                                            SPACE 2
+              ORG  WR10RCL4&CG1         EDIFACT VERSION 94:1      EIF033
+ WR10UTR4&CG1 DS   CL2                  INB TERMINAL OF ARRIVAL   EIF033
+ WR10ISI4&CG1 DS   CL1                  INB SERVICE TYPE IND      EIF033
+ WR10EAB&CG1  EQU  *                    END OF ITEM WITH KEY= 'AB'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SERVICE DETAILS                                     *
+ *       KEY = 'AC'      USED BY SEGMENTS - USI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10E8C&CG1
+ WR10USS&CG1  DS   CL1                  UPDATE SPECIAL CODE
+ *R10EAC&CG1  EQU  *                    END OF ITEM WITH KEY ='AC'EIF033
+                                                            SPACE 2
+              ORG  WR10E8C&CG1                                    EIF033
+ WR10USS4&CG1 DS   CL1                  UPDATE SPECIAL CODE       EIF033
+ WR10APU4&CG1 DS   CL1                  UPDATE API                EIF033
+ WR10EAC&CG1  EQU  *                    END OF ITEM WITH KEY= 'AC'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER SERVICE DETAILS                                     *
+ *       KEY = 'AD'      USED BY SEGMENTS - USI                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E8D&CG1
+ WR10UOS&CG1 DS   CL1                   UPDATE OSI ACTION CODE
+ WR10OSU&CG1 DS   CL1                   OTHER SERVICE INFORMATION UPDATE
+ WR10EAD&CG1 EQU  *                     END OF ITEM WITH KEY = 'AD'
+                                                            SPACE 2
+ ***********************************************************************
+ *       POOLED BAGGAGE REFERENCE                                EIF033*
+ *       KEY = 'AE'      USED BY SEGMENTS - UBD                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E93&CG1
+ WR10EAE&CG1  EQU  *                    END OF ITEM WITH KEY='AE' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER FREQUENT FLYER DETAILS                              *
+ *       KEY = 'AF'      USED BY SEGMENTS - USI                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E8F&CG1
+ WR10EAF&CG1  EQU  *                    END OF ITEM WITH KEY = 'AF'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT CHARACTERISTICS                                          *
+ *       KEY = 'B1'      USED BY SEGMENTS - USD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E91&CG1
+ WR10EB1&CG1  EQU  *                    END OF ITEM WITH KEY = 'B1'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT COLUMN                                                   *
+ *       KEY = 'B2'      USED BY SEGMENTS - USD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E92&CG1
+ WR10EB2&CG1  EQU  *                    END OF ITEM WITH KEY = 'B2'
+                                                            EJECT
+ ***********************************************************************
+ *       API PASSENGER DETAILS                                   EIF033*
+ *       KEY = 'B4'      USED BY SEGMENTS - USI                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10E94&CG1                                    EIF033
+ WR10EB4&CG1  EQU  *                    END OF ITEM WITH KEY='B4' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       API PASSENGER DETAILS                                   EIF033*
+ *       KEY = 'B5'      USED BY SEGMENTS - USI                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10E95&CG1                                    EIF033
+ WR10EB5&CG1  EQU  *                    END OF ITEM WITH KEY='B5' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE SEAT DETAILS - SEGMENT AIRPORT OF DEPT & ARRIVAL       *
+ *       KEY = 'B6'      USED BY SEGMENTS - USD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10SDD3&CG1 DS   CL3          3215    SEGMENT AIRPORT OF DEPT   EIN340
+              DS   CL2                  SPARE FOR EXPANSION       EIN340
+ WR10SDA3&CG1 DS   CL3          3259    SEGMENT AIRPORT OF ARRIVALEIN340
+              DS   CL2                  SPARE FOR EXPANSION       EIN340
+ WR10EB6&CG1  EQU  *                    END OF ITEM WITH KEY='B6' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       BAGTAG INFO - UPDATE BAGTAG DEFINITION                        *
+ *       KEY = 'B7'      USED BY SEGMENTS - UTI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10E63&CG1          EDIFACT VERSION 03:1 BTI  EIN340
+ WR10UTA3&CG1 DS   CL1    C037  9858    UPDATE ACTION             EIN340
+ WR10EB7&CG1  EQU  *                    END OF ITEM WITH KEY='B7' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       BAGTAG INFO - UPDATE BAGTAG STUB INFORMATION                  *
+ *       KEY = 'B8'      USED BY SEGMENTS - UTI                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10E64&CG1          EDIFACT VERSION 03:1 BTI  EIN340
+ WR10USA3&CG1 DS   CL1    C695  9858    UPDATE ACTION             EIN340
+ WR10EB8&CG1  EQU  *                    END OF ITEM WITH KEY='B8' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE PAX API/DOT INFORMATION - ACTION DETAILS               *
+ *       KEY = 'B9'      USED BY SEGMENTS - UAP                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10UAP3&CG1 DS   CL1    C031  9858    UPDATE ACTION             EIN340
+ WR10EB9&CG1  EQU  *                    END OF ITEM WITH KEY='B9' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       UPDATE PAX API/DOT INFORMATION - ACTION DETAILS               *
+ *       KEY = 'BA'      USED BY SEGMENTS - UAP                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10UAR3&CG1 DS   CL3    C031  1229    ACTION REQUEST/NOTIFICAT. EIN340
+ WR10EBA&CG1  EQU  *                    END OF ITEM WITH KEY='BA' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       PASSENGER LEVEL WARNING/ERROR                                 *
+ *       KEY = 'C0'      USED BY SEGMENTS - WAD/ERR                    *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E28&CG1
+ WR10EC0&CG1  EQU  *                    END OF ITEM WITH KEY = 'C0'
+                                                            SPACE 2
+ ***********************************************************************
+ *       CANCELLATION REQUEST DETAILS                                  *
+ *       KEY = 'C1'      USED BY SEGMENTS - CRD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10RCX&CG1 DS   CL2                   REASON FOR CANCEL
+ WR10TCX&CG1 DS   CL1                   TYPE OF CANCEL
+ WR10EC1&CG1  EQU  *                    END OF ITEM WITH KEY = 'C1'
+                                                            SPACE 2
+ ***********************************************************************
+ *       CANCELLATION REQUEST DETAILS                                  *
+ *       KEY = 'C2'      FREE TEXT USED BY SEGMENTS - CRD              *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E26&CG1
+ *                                      EXPLANATION OF REASON TO CANCEL
+ WR10EC2&CG1  EQU  *                    END OF ITEM WITH KEY = 'C2'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       FLIGHT SEGMENT DETAILS - FLIGHT SERVICE DETAILS               *
+ *       KEY = 'C5'      USED BY SEGMENTS - FSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10FSC3&CG1 DS   CL1          9871    FLIGHT SERVICE CODE       EIN340
+ WR10EC5&CG1  EQU  *                    END OF ITEM WITH KEY='C5' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       FLIGHT SEGMENT DETAILS - API REQUIRED INDICATOR               *
+ *       KEY = 'C6'      USED BY SEGMENTS - FSD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10API3&CG1 DS   CL1          9869    API REQUIRED IND          EIN340
+ WR10EC6&CG1  EQU  *                    END OF ITEM WITH KEY='C6' EIN340
+                                                            SPACE 2
+ ***********************************************************************
+ *       EQUIPMENT DETAILS - CHARACTERISTIC IDENTIFICATION             *
+ *       KEY = 'C7'      USED BY SEGMENTS - EQD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1          EDIFACT VERSION 03:1      EIN340
+ WR10ECI3&CG1 DS   CL17   C048  7037    CHARACTERISTIC ID         EIN340
+ WR10EC7&CG1  EQU  *                    END OF ITEM WITH KEY='C7' EIN340
+                                                            SPACE 2
+ *****************************************************************EIH838
+ *      SEAT REQUEST PARAMETERS                                   EIH838
+ *      KEY = '7C'      USED BY SEGMENTS - SRP                    EIH838
+ *****************************************************************EIH838
+                                                       SPACE 2    EIH838
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10CC7C&CG1 DS   CL1                  CABIN CLASS DESIGNATOR    EIH838
+ WR10NS7C&CG1 DS   CL1                  NO SMOKING INDICATOR      EIH838
+ WR10CN7C&CG1 DS   CL1                  CABIN CLASS NUMBER        EIH838
+ WR10CD7C&CG1 DS   CL1                  CAB. COMPRTMNT DESIGNATOR EIH838
+ WR10E7C&CG1  EQU  *                    END OF ITEM WITH KEY='7C' EIH838
+ ***********************************************************************
+ *      SRP - SEAT CHARACTERISTIC                                 EIH838
+ *      KEY = 'D0'      USED BY SEGMENTS - SRP                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10SCD0&CG1 DS   CL2                  SEAT CHARACTERISTIC CODED EIH838
+ WR10ED0&CG1  EQU  *                    END OF ITEM WITH KEY='D0' EIH838
+ ***********************************************************************
+ *      SRP - RANGE OF ROWS DETAILS                               EIH838
+ *      KEY = 'D1'      USED BY SEGMENTS - SRP                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10SRD1&CG1 DS   CL3                  SEAT ROW NUMBER           EIH838
+ WR10RND1&CG1 DS   CL3                  ROWS - NUMBER OF ROWS     EIH838
+ WR10ED1&CG1  EQU  *                    END OF ITEM WITH KEY='D1' EIH838
+ ***********************************************************************
+ *      SRP - SEAT COLUMN                                         EIH838
+ *      KEY = 'D2'      USED BY SEGMENTS - SRP                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10SE7C&CG1 DS   CL1                  SEAT COLUMN               EIH838
+ WR10ED2&CG1  EQU  *                    END OF ITEM WITH KEY='D2' EIH838
+ ***********************************************************************
+ *      SRP - PROCESSING INDICATOR / REFERENCE NUMBER / FREE TEXT EIH838
+ *      KEY = 'D3'      USED BY SEGMENTS - SRP                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10PID3&CG1 DS   CL3                  PROCESSING INDICATOR      EIH838
+ WR10RND3&CG1 DS   CL35                 REFERENCE NUMBER          EIH838
+ WR10FTD3&CG1 DS   CL1                  FREE TEXT                 EIH838
+ WR10ED3&CG1  EQU  *                    END OF ITEM WITH KEY='D3' EIH838
+                                                        SPACE 2   EIH838
+ ***********************************************************************
+ *       SEATMAP SELECTION DETIALS                                     *
+ *       KEY = 'E0'      USED BY SEGMENTS - SRP                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1
+ WR10NSI&CG1  DS   CL1                  NO SMOKING INDICATOR
+ WR10CCD&CG1  DS   CL1                  CABIN CLASS DESIGNATOR
+ WR10SRN&CG1  DS   CL3                  START ROW FOR RANGE REQUEST
+ WR10SNR&CG1  DS   CL3                  #ROWS IN REANGE
+ WR10CNO4&CG1 DS   CL1                  CABIN CLASS NUMBER        EIF033
+ WR10CCT4&CG1 DS   CL1                  CABIN COMPARTMENT DESIG.  EIF033
+ WR10PIC4&CG1 DS   CL3                  PROCESSING INDIC. CODED   EIF033
+ WR10RNL4&CG1 DS   XL2                  LENGTH OF REFERENCE NO.   EIF033
+ WR10RNO4&CG1 DS   CL1                  REFERENCE NO.             EIF033
+ WR10EE0&CG1  EQU  *                    END OF ITEM WITH KEY = 'E0'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEATMAP SELECTION DETAILS                               EIF033*
+ *       KEY = 'E1'      FREE TEXT USED BY SEGMENT - SRP         EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E26&CG1                                    EIF033
+ WR10EE1&CG1  EQU  *                    END OF ITEM WITH KEY='E1'EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       AIRCRAFT EQUIPMENT DETAILS                                    *
+ *       KEY = 'E2'      FREE TEXT USED BY SEGMENTS - EQD              *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10E26&CG1
+ *                                      TEXT DESCRIPTION OF AIRCRAFT
+ .*                                     VERSION (MAX 63 CHARS)
+ WR10EE2&CG1  EQU  *                    END OF ITEM WITH KEY = 'E2'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT CHARACTERISTICS                                    EIF033*
+ *       KEY = 'E3'      USED BY SEGMENTS - SRP                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10STC4&CG1 DS   CL2                  SEAT CHARACTERISTIC CODED EIF033
+ WR10EE3&CG1  EQU  *                    END OF ITEM WITH KEY='E3' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT COLUMN                                             EIF033*
+ *       KEY = 'E4'      USED BY SEGMENTS - SRP                  EIF033*
+ *                       EDIFACT VERSION  - 94:1                 EIF033*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10SCO4&CG1 DS   CL1                  SEAT COLUMN               EIF033
+ WR10EE4&CG1  EQU  *                    END OF ITEM WITH KEY='DF' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       GROUP DATA LREC                                               *
+ *       KEY = 'E5'      USED BY SEGMENTS - UNG/UNE                    *
+ *       USED BY INTERFACE ONLY - DO NOT CHANGE !                      *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10FGI&CG1 DS    CL6                  FUNCTIONAL GROUP IDENTIFICATION
+ WR10SID&CG1 DS    CL35                 SENDER IDENTIFICATION
+ WR10SQU&CG1 DS    CL4                  SENDER IDENTIFICATION QUALIFIER
+ WR10RCI&CG1 DS    CL35                 RECEIVER IDENTIFICATION
+ WR10RIQ&CG1 DS    CL4                  RECEIVER ID QUALIFIER
+ WR10GDP&CG1 DS    CL6                  GROUP DATE OF PREPARATION
+ WR10GTP&CG1 DS    CL4                  GROUP TIME OF PREPARATION
+ WR10GRN&CG1 DS    CL14                 GROUP REFERENCE NUMBER
+ WR10GCA&CG1 DS    CL2                  GROUP CONTROLLING AGENCY
+ WR10GVN&CG1 DS    CL3                  VERSION NO OF MSG TYPE IN GROUP
+ WR10MRN&CG1 DS    CL3                  RELEASE NO OF MSG TYPE IN GROUP
+ WR10GAC&CG1 DS    CL6                  GROUP CODE ASSIGNED
+ WR10GAP&CG1 DS    CL14                 GROUP APPLICATION PASSWORD
+ WR10IN5&CG1 DS    CL1                  GROUP INDICATOR BYTE
+ *           BITS 0-7 = SPARE
+ WR10IN6&CG1 DS    CL1                  GROUP INDICATOR BYTE
+ *           BITS 0-7 = SPARE
+ WR10GCT&CG1 DS    CL6                  GROUP MESSAGE COUNT
+ WR10EE5&CG1  EQU  *                    END OF ITEM WITH KEY = 'E5'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       CONFIGURATION DETAILS                                         *
+ *       KEY = 'E6'      USED BY SEGMENTS - EQD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10CMP&CG1 DS   CL1                   CABIN CLASS DESIGNATOR
+ WR10NOS&CG1 DS   CL3                   NUMBER OF SEATS IN CLASS
+ WR10EE6&CG1  EQU  *                    END OF ITEM WITH KEY = 'E6'
+                                                            SPACE 2
+ ***********************************************************************
+ *       AIRCRAFT EQUIPMENT DETAILS                                    *
+ *       KEY = 'E7'      USED BY SEGMENTS - EQD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10EQP&CG1 DS   CL3                   AIRCRAFT EQUIPMENT CODE
+ WR10CAB&CG1 DS   CL12                  AIRCRAFT CABIN VERSION IDENT.
+ .*                                     VERSION (MAX 63 CHARS)
+ WR10EE7&CG1  EQU  *                    END OF ITEM WITH KEY = 'E7'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       AIRCRAFT CABIN DETAILS                                        *
+ *       KEY = 'E8'      USED BY SEGMENTS - CBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1
+ WR10CC1&CG1  DS   CL1                  CABIN CLASS DESIGNATOR
+ WR10RS1&CG1  DS   CL3                  START ROW THIS CABIN CLASS
+ WR10RE1&CG1  DS   CL3                  LAST ROW THIS CABIN CLASS
+ WR10CCL&CG1  DS   CL1                  CABIN CLASS LOCATION
+ WR10RS2&CG1  DS   CL3                  START ROW OF SMOKING AREA
+ WR10RE2&CG1  DS   CL3                  LAST ROW THIS SMOKING AREA
+ WR10DSO&CG1  DS   CL1                  DEFAULT SEAT OCCUPATION
+ WR10RS3&CG1  DS   CL3                  START ROW OF OVERWING RANGE
+ WR10RE3&CG1  DS   CL3                  LAST ROW OF OVERWING RANGE
+ WR10CHI4&CG1 DS   CL17                 CHARACTERISTIC IDENT      EIF033
+ WR10CCN4&CG1 DS   CL1                  CABIN CLS NUMBER CODED    EIF033
+ WR10CCC4&CG1 DS   CL1                  CABIN CLS COMPARTMENT     EIF033
+ WR10EE8&CG1  EQU  *                    END OF ITEM WITH KEY = 'E8'
+                                                            SPACE 2
+ ***********************************************************************
+ *       AIRCRAFT CABIN DETAILS                                        *
+ *       KEY = 'E9'      USED BY SEGMENTS - CBD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SCL&CG1 DS   CL1                   SEAT COLUMN FOR CABIN WIDTH
+ WR10CD1&CG1 DS   CL2                   COLUMN CHARACTERISTIC
+ WR10CD2&CG1 DS   CL2                   COLUMN CHARACTERISTIC
+ *
+ *  KEY E9 IS REPEATED FOR EACH COLUMN EXISTING ON THE FLIGHT
+ *
+ WR10EE9&CG1  EQU  *                    END OF ITEM WITH KEY = 'E9'
+                                                            SPACE 2
+ *****************************************************************EIH838
+ *       EQUIPMENT INFORMATION                                    EIH838
+ *       KEY = '78'      USED BY SEGMENTS - EQI                   EIH838
+ *****************************************************************EIH838
+                                                          SPACE 2 EIH838
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQI1&CG1 DS   CL1                  CABIN CLASS DESIGN        EIH838
+ WR10EQI2&CG1 DS   CL3                  NUMBER OF SEATS IN CABIN  EIH838
+ WR10E78&CG1  EQU  *                    END OF ITEM WITH KEY='78' EIH838
+ ***********************************************************************
+ *       EQUIPMENT INFORMATION                                    EIH838
+ *       KEY = 'D4'      USED BY SEGMENTS - EQI                   EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQI3&CG1 DS   CL1                  CHARACTERISTIC ID         EIH838
+ WR10ED4&CG1  EQU  *                    END OF ITEM WITH KEY='D4' EIH838
+ ***********************************************************************
+ *       EQUIPMENT INFORMATION - TYPE OF MEANS OF TRANSPORT       EIH838
+ *       KEY = 'D5'      USED BY SEGMENTS - EQI                   EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQI4&CG1 DS   CL8                  TYPE OF MEANS TRANSPORT   EIH838
+ WR10EQI5&CG1 DS   CL12                 AIRCRAFT VERSION ID       EIH838
+ WR10EQI6&CG1 DS   CL12                 ANOTHER AIRCRAFT VERS. ID EIH838
+ WR10EQI7&CG1 DS   CL35                 COMPANY IDENTIFICATION    EIH838
+ WR10EQI8&CG1 DS   CL1                  EQPMNT IDENTIFICATION NO. EIH838
+ WR10ED5&CG1  EQU  *                    END OF ITEM WITH KEY='D5' EIH838
+ ***********************************************************************
+ *       EQUIPMENT INFORMATION - CABIN FACILITIES                 EIH838
+ *       X'D6'           USED BY SEGMENTS EQI                     EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQI9&CG1 DS   CL3                  CABIN FACILS. CHARACT'IC  EIH838
+ WR10ED6&CG1  EQU  *                    END OF ITEM WITH KEY='D6' EIH838
+ ***********************************************************************
+ *       FREE TEXT                                                EIH838
+ *       KEY = 'D7'      USED BY SEGMENTS EQI                     EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQIA&CG1 DS   CL1                  FREE TEXT INFORMATION     EIH838
+ WR10ED7&CG1  EQU  *                    END OF ITEM WITH KEY='D7' EIH838
+                                                          SPACE 2 EIH838
+ *****************************************************************EIH838
+ *       CABIN FACILITIES - ROW LOCATION QUALIFIER                EIH838
+ *       KEY = '79'      USED BY SEGMENTS - CBF                   EIH838
+ *****************************************************************EIH838
+                                                          SPACE 2 EIH838
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10CBF1&CG1 DS   CL3                  ROW LOCATION QUALIFIER    EIH838
+ WR10E79&CG1  EQU  *                    END OF ITEM WITH KEY='79' EIH838
+ *****************************************************************EIH838
+ *       CABIN FACILITIES - CABIN FACILITIES DETAILS              EIH838
+ *       KEY = 'D8'      USED BY SEGMENTS - CBF                   EIH838
+ *****************************************************************EIH838
+                                                          SPACE 2 EIH838
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10CBF2&CG1 DS   CL3                  CABIN FACILITIES CHARACTEREIH838
+ WR10CBF3&CG1 DS   CL3                  PLACE/LOCATION QUALIFIER  EIH838
+ WR10ED8&CG1  EQU  *                    END OF ITEM WITH KEY='D8' EIH838
+                                                          SPACE 2 EIH838
+ *****************************************************************EIH838
+ *       NUMBER OF UNITS                                          EIH838
+ *       KEY = '7A'     USED BY SEGMENTS - EQN                    EIH838
+ *****************************************************************EIH838
+                                                          SPACE 2 EIH838
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10EQN1&CG1 DS   CL15       C523 6350 NUMBER OF UNITS           EIH838
+ WR10EQN2&CG1 DS   CL3             6353 NUMBER OF UNITS QUALIFIER EIH838
+ WR10E7A&CG1  EQU  *                    END OF ITEM WITH KEY='7A' EIH838
+                                                          SPACE 2 EIH838
+ ***********************************************************************
+ *       AIRCRAFT ROW DETAILS                                          *
+ *       KEY = 'EA'      USED BY SEGMENTS - ROD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10RRN&CG1 DS   CL3                   SEAT ROW NUMBER
+ WR10EEA&CG1  EQU  *                    END OF ITEM WITH KEY = 'EA'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       MORE ROW DETAILS                                              *
+ *       KEY = 'EB'      USED BY SEGMENTS - ROD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10RCH&CG1 DS   CL1                   1ST ROW CHARACTERISTIC
+ WR10RC2&CG1 DS   CL1                   SUBSEQUENT ROW CHARS
+ *R10EEB&CG1  EQU  *                    END OF ITEM WITH KEY ='EB'EIF033
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIF033
+ WR10RCH4&CG1 DS   CL3                  1ST ROW CHARACTERISTIC    EIF033
+ WR10RC24&CG1 DS   CL3                  SUBSEQUENT ROW CHARS      EIF033
+ WR10EEB&CG1  EQU  *                    END OF ITEM WITH KEY='EB' EIF033
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT OCCUPATION DETAILS                                       *
+ *       KEY = 'EC'      USED BY SEGMENTS - ROD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SCM&CG1 DS   CL1                   SEAT COLUMN
+ WR10SOS&CG1 DS   CL1                   SEAT OCCUPATION STATUS
+ WR10EEC&CG1  EQU  *                    END OF ITEM WITH KEY = 'EC'
+                                                            SPACE 2
+ ***********************************************************************
+ *       SEAT CHARACTERISTICS                                          *
+ *       KEY = 'ED'      USED BY SEGMENTS - ROD                        *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10SCH&CG1 DS   CL2                   SEAT CHARACTERICTICS
+ WR10EED&CG1  EQU  *                    END OF ITEM WITH KEY = 'ED'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       TRAVELLER INFORMATION - TRAVELLER SURNAME INFORMATION    EIH838
+ *       KEY = 'D9'      USED BY SEGMENTS - TIF                   EIH838
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1                                     EIH838
+ WR10TSD9&CG1 DS   CL70   C322 9936     TRAVELLER SURNAME         EIH838
+ WR10NUD9&CG1 DS   CL3         6353     NUMBER OF UNITS QUALIFIER EIH838
+ WR10QYD9&CG1 DS   CL15        6060     QUANTITY                  EIH838
+ WR10STD9&CG1 DS   CL3         4405     STATUS CODED              EIH838
+ WR10ED9&CG1  EQU  *                    END OF ITEM WITH KEY = 'D9'
+ ***********************************************************************
+ *       TRAVELLER INFORMATION - TRAVELLER SURNAME INFORMATION    EIH838
+ *       KEY = 'DA'      USED BY SEGMENTS - TIF                   EIH838
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1                                     EIH838
+ WR10TGDA&CG1 DS   CL70   C324 9942     TRAVELLER GIVEN NAME      EIH838
+ WR10NUDA&CG1 DS   CL3         6353     NUMBER OFUNITS QUALIFIER  EIH838
+ WR10RNDA&CG1 DS   CL10        9944     TRAVELLER REF. NUMBER     EIH838
+ WR10AIDA&CG1 DS   CL1         9946     ACCOMPANIED BY INFANT IND EIH838
+ WR10ONDA&CG1 DS   CL1         9754     OTHER NAMES               EIH838
+ WR10EDA&CG1  EQU  *                    END OF ITEM WITH KEY = 'DA'
+ ***********************************************************************
+ *       FREQUENT TRAVELLER INFORMATION - FREQUENT TRAVELLER ID   EIH838
+ *       KEY = 'DB'      USED BY SEGMENTS - FTI                   EIH838
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1                                     EIH838
+ WR10TGDB&CG1 DS   CL35       C326 9906 COMPANY IDENTIFICATION    EIH838
+ WR10NUDB&CG1 DS   CL25            9948 FREQ. TRAVELLER ID CODE   EIH838
+ WR10RNDB&CG1 DS   CL10            9944 TRAVELLER REF. NUMBER     EIH838
+ WR10AIDB&CG1 DS   CL3             4405 STATUS, CODED             EIH838
+ WR10ONDB&CG1 DS   CL35            7456 MEMBERSHIP LEVEL          EIH838
+ WR10EDB&CG1  EQU  *                    END OF ITEM WITH KEY = 'DB'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       INTERCHANGE DATA LREC                                         *
+ *       KEY = 'EE'      USED BY SEGMENTS - UNB/UNZ                    *
+ *       USED BY INTERFACE ONLY - DO NOT CHANGE !                      *
+ *       N.B. WR10MSG IS SET TO ZERO FOR THIS LREC                     *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10DLM&CG1 DS   0XL6                  DELIMETER VALUES
+ WR10SBS&CG1 DS    CL1                  SUB-ELEMENT SEPARATOR
+ WR10ELS&CG1 DS    CL1                  ELEMENT SEPARATOR
+ WR10DPT&CG1 DS    CL1                  DECIMAL POINT SEPARATOR
+ WR10RLC&CG1 DS    CL1                  RELEASE CHARACTER
+             DS    CL1                  RESERVED BLANK
+ WR10SGS&CG1 DS    CL1                  SEGMENT SEPARATOR
+ WR10INI&CG1 DS    XL1                  1ST INDICATOR BYTE
+ *           BIT 0 ON = DELIMETER STRING SEGMENT PRESENT  - INCOMING MSG
+ *           BIT 1 ON = DELIMETER STRING SEGMENT REQUIRED - OUTGOING MSG
+ *           BITS 2-7 = SPARE
+ WR10IN2&CG1 DS    XL1                  2ND INDICATOR BYTE
+ *           BITS 0-7 = SPARE
+ WR10SYI&CG1 DS    CL4                  SYNTAX IDENTIFIER
+ WR10SYV&CG1 DS    CL1                  SYNTAX VERSION
+ WR10SIF&CG1 DS    CL35                 SENDER IDENTIFICATION
+ WR10PIQ&CG1 DS    CL4                  PARTNER ID CODE QUALIFIER
+ WR10ARR&CG1 DS    CL14                 ADDRESS FOR REVERSE ROUTING
+ WR10RIF&CG1 DS    CL35                 RECIEVER IDENTIFICATION
+ WR10RCQ&CG1 DS    CL4                  RECEIVER ID CODE
+ WR10RAD&CG1 DS    CL14                 ROUTING ADDRESS
+ WR10DMP&CG1 DS    CL6                  DATE OF MESSAGE PREPARATION
+ WR10TMP&CG1 DS    CL4                  TIME OF MESSAGE PREPARATION
+ WR10ICR&CG1 DS    CL14                 INTERCHANGE CONTROL REFERENCE
+ WR10RRP&CG1 DS    CL14                 RECIVER'S REFERENCE / PASSWORD
+ WR10RRQ&CG1 DS    CL2                  RECIVER'S REFERENCE QUALIFIER
+ WR10ARF&CG1 DS    CL14                 APPLICATION REFERENCE
+ WR10PPC&CG1 DS    CL1                  PROCESSING PRIORITY CODE
+ WR10ARQ&CG1 DS    CL1                  ACKNOWLEDGEMENT REQUEST
+ WR10CID&CG1 DS    CL35                 COMMUNICATIONS AGREEMENT ID
+ WR10TID&CG1 DS    CL1                  TEST INDICATOR
+ WR10MCT&CG1 DS    CL6                  MESSAGE COUNT
+ WR10SRA&CG1 DS    CL1                  SOURCE APPLICATION
+ WR10TGS&CG1 DS    CL2                  TARGET SYSTEM (HOST-TO-HOST)
+ WR10SRS&CG1 DS    CL2                  SOURCE SYSTEM (HTH)       EIJ959
+ WR10EEE&CG1  EQU  *                    END OF ITEM WITH KEY = 'EE'
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *       MESSAGE DATA LREC                                             *
+ *       KEY = 'EF'      USED BY SEGMENTS - UNH/UNT                    *
+ *       FIELDS WR10MSR-WR10IN4 ARE FOR HANDLER/INTERFACE USE ONLY.    *
+ *       THIS AREA OF LREC MUST NOT BE CHANGED WITHOUT APPLICATION     *
+ *       WIDE CO-ORDINATION, AS WELL AS CHANGING THE HANDLER ITSELF.   *
+ ***********************************************************************
+                                                            SPACE 2
+             ORG  WR10ORG&CG1
+ WR10MSR&CG1 DS    CL14                 UNIQUE MESSAGE REFERENCE
+ WR10SDM&CG1 DS    CL6                  EDIFACT MESSAGE TYPE
+ WR10SDV&CG1 DS    CL3                  EDIFACT VERSION NUMBER
+ WR10SDR&CG1 DS    CL3                  EDIFACT VERSION RELEASE NUMBER
+ WR10CRA&CG1 DS    CL2                  CONTROLLING AGENCY
+ WR10AAC&CG1 DS    CL6                  ASSOCIATION ASSIGNED CODE
+ WR10CAR&CG1 DS    CL35                 COMMON ACCESS REFERENCE
+ WR10SOT&CG1 DS    CL2                  SEQUENCE OF TRANSFER
+ WR10SCT&CG1 DS    CL6                  SEGMENT COUNT
+ WR10FLT&CG1 DS    CL1                  FIRST AND LAST TRANSFER IND
+ WR10IN3&CG1 DS    XL1                  3RD INDICATOR BYTE
+ *           BITS 0-7 = SPARE
+ WR10IN4&CG1 DS    XL1                  4TH INDICATOR BYTE
+ *           BITS 0-7 = SPARE
+ WR10IMV&CG1 DS    CL3                  INTERNAL MESSAGE TYPE VERSION
+ WR10EEF&CG1  EQU  *                    END OF ITEM WITH KEY = 'EF'
+                                                            SPACE 2
+ WR10MNB&CG1 EQU   WR10HDR&CG1+#LBSZE-1      = MAX NAB 381(ACPDB) EIJ959
+                                                            EJECT
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       PSQ - REQUEST SYSTEM RESPONSE TO STATUS                       *
+ *       KEY = '30'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                              REQUEST APPLICATION STATUS
+ WR10S30&CG1  DS   CL6              SYSTEM STATUS
+ WR10D30&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10E30&CG1  EQU  *                END OF ITEM WITH KEY = '30'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       PSR - RESPONSE TO STATUS OR SYSTEM SHUTDOWN                   *
+ *       KEY = '31'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                              STATUS OF REQUEST
+ WR10S31&CG1  DS   CL3              ACKNOWLEDGEMENT STATUS
+ WR10D31&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10E31&CG1  EQU  *                END OF ITEM WITH KEY = '31'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ASC - AIR SEGMENT BOOKING DETAILS                             *
+ *       KEY = '33'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                           FLIGHT SPECIFICATION DETAILS
+ WR10D33&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10F33&CG1  DS   CL4              FLIGHT NUMBER
+ WR10B33&CG1  DS   CL1              RESERVATIONS BOOKING DESIGNATOR
+ WR10M33&CG1  DS   CL1              RESERVATIONS BOOKING MODIFIER
+ WR10R33&CG1  DS   CL10             DEPARTURE DATE AND TIME - YYMMDDHHMM
+ WR10P33&CG1  DS   CL5              PLACE OF DEPARTURE
+ WR10V33&CG1  DS   CL10             ARRIVAL DATE AND TIME - YYMMDDHHMM
+ WR10T33&CG1  DS   CL5              PLACE OF ARRIVAL
+ WR10C33&CG1  DS   CL2              ACTION REQUEST CODE
+ WR10N33&CG1  DS   CL3              NUMBER OF SEATS REQUESTED
+ WR10Q33&CG1  DS   CL1              FLIGHT SEGMENT QUALIFIER
+ WR10E33&CG1  EQU  *                END OF ITEM WITH KEY = '33'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ASR - AIR SEGMENT SELL RESPONSE                               *
+ *       KEY = '34'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                           FLIGHT SPECIFICATION DETAILS
+ WR10D34&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10F34&CG1  DS   CL4              FLIGHT NUMBER
+ WR10B34&CG1  DS   CL1              RESERVATIONS BOOKING DESIGNATOR
+ WR10M34&CG1  DS   CL1              RESERVATIONS BOOKING MODIFIER
+ WR10R34&CG1  DS   CL10             DEPARTURE DATE AND TIME - YYMMDDHHMM
+ WR10P34&CG1  DS   CL5              PLACE OF DEPARTURE
+ WR10V34&CG1  DS   CL10             ARRIVAL DATE AND TIME - YYMMDDHHMM
+ WR10T34&CG1  DS   CL5              PLACE OF ARRIVAL
+ WR10C34&CG1  DS   CL2              ACTION REQUEST CODE
+ WR10N34&CG1  DS   CL3              NUMBER OF SEATS REQUESTED
+ WR10Q34&CG1  DS   CL1              FLIGHT SEGMENT QUALIFIER
+ WR10E34&CG1  EQU  *                END OF ITEM WITH KEY = '34'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       AXR - AIR SEGMENT CANCELLATION RESPONSE                       *
+ *       KEY = '35'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                           FLIGHT SPECIFICATION DETAILS
+ WR10D35&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10F35&CG1  DS   CL4              FLIGHT NUMBER
+ WR10B35&CG1  DS   CL1              RESERVATIONS BOOKING DESIGNATOR
+ WR10M35&CG1  DS   CL1              RESERVATIONS BOOKING MODIFIER
+ WR10R35&CG1  DS   CL10             DEPARTURE DATE AND TIME - YYMMDDHHMM
+ WR10P35&CG1  DS   CL5              PLACE OF DEPARTURE
+ WR10V35&CG1  DS   CL10             ARRIVAL DATE AND TIME - YYMMDDHHMM
+ WR10T35&CG1  DS   CL5              PLACE OF ARRIVAL
+ WR10C35&CG1  DS   CL2              ACTION REQUEST CODE
+ WR10N35&CG1  DS   CL3              NUMBER OF SEATS REQUESTED
+ WR10Q35&CG1  DS   CL1              FLIGHT SEGMENT QUALIFIER
+ WR10E35&CG1  EQU  *                END OF ITEM WITH KEY = '35'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ASX - AIR SEGMENT CANCELLATION DETAILS                        *
+ *       KEY = '36'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                           FLIGHT SPECIFICATION DETAILS
+ WR10D36&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10F36&CG1  DS   CL4              FLIGHT NUMBER
+ WR10B36&CG1  DS   CL1              RESERVATIONS BOOKING DESIGNATOR
+ WR10M36&CG1  DS   CL1              RESERVATIONS BOOKING MODIFIER
+ WR10R36&CG1  DS   CL10             DEPARTURE DATE AND TIME - YYMMDDHHMM
+ WR10P36&CG1  DS   CL5              PLACE OF DEPARTURE
+ WR10V36&CG1  DS   CL10             ARRIVAL DATE AND TIME - YYMMDDHHMM
+ WR10T36&CG1  DS   CL5              PLACE OF ARRIVAL
+ WR10C36&CG1  DS   CL2              ACTION REQUEST CODE
+ WR10N36&CG1  DS   CL3              NUMBER OF SEATS REQUESTED
+ WR10Q36&CG1  DS   CL1              FLIGHT SEGMENT QUALIFIER
+ WR10E36&CG1  EQU  *                END OF ITEM WITH KEY = '36'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       IGD - IGNORE INDICATOR                                        *
+ *       KEY = '37'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10S37&CG1  DS   CL3              ACKNOWLEDGEMENT STATUS
+ WR10D37&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10E37&CG1  EQU  *                END OF ITEM WITH KEY = '37'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       QMS - PNR WRAP-UP ACKNOWLEDGEMENT RESPONSE                    *
+ *       KEY = '38'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                              STATUS OF REQUEST
+ WR10S38&CG1  DS   CL3              ACKNOWLEDGEMENT STATUS
+ WR10D38&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10E38&CG1  EQU  *                END OF ITEM WITH KEY = '38'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       LOC - PNE WRAP UP LOCATOR RESPONSE                            *
+ *       KEY = '39'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ *                                  REFERENCE TO WRAP-UP REQUEST
+ WR10Q39&CG1  DS   CL8              REQUESTING SYSTEM PNR REC LOC
+ WR10P39&CG1  DS   CL8              RESPONDING SYSTEM PNR REC LOC
+ WR10I39&CG1  DS   CL6              REQUESTING SYSTEM UNUQUE SYS ID
+ WR10D39&CG1  DS   CL3              AIRLINE DESIGNATOR
+ WR10E39&CG1  EQU  *                END OF ITEM WITH KEY = '39'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ODI - ORIGIN AND DESTINATION RESPONSE                         *
+ *       KEY = '3A'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10D3A&CG1  DS   CL5    3225      PLACE OF DEPARTURE
+ WR10A3A&CG1  DS   CL5    3225      PLACE OF DESTINATION
+ WR10E3A&CG1  EQU  *                END OF ITEM WITH KEY = '3A'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       IGN - IGNORE QUERY                                            *
+ *       KEY = '3B'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10T3B&CG1  DS   CL2              TEXT FUNCTION CODE
+ WR10E3B&CG1  EQU  *                END OF ITEM WITH KEY = '3B'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RCP - PASSENGER NAME RECORD LOCATOR                           *
+ *       KEY = '3C'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10P3C&CG1  DS   CL8              PNR RECORD LOCATOR
+ WR10E3C&CG1  EQU  *                END OF ITEM WITH KEY = '3C'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       TTY - PSEUDO TELETYPE MESSAGE                                 *
+ *       KEY = '3D'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10L3D&CG1  DS   XL2              LENGTH OF TELETYPE TEXT
+ WR10T3D&CG1  DS   CL1              TELETYPE TEXT
+ WR10E3D&CG1  EQU  *                END OF ITEM WITH KEY = '3D'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ERT - ERROR / ADVICE RESPONSE TO QUERY                        *
+ *       KEY = '3E'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C3E&CG1  DS   CL1              MESSAGE CATEGORY
+ WR10P3E&CG1  DS   CL1              PROCESSING LEVEL
+ WR10M3E&CG1  DS   CL6              MESSAGE TYPE
+ WR10R3E&CG1  DS   CL6              MESSAGE REFERENCE
+ WR10A3E&CG1  DS   CL4              ERROR / ADVICE MESSAGE NUMBER
+ WR10E3E&CG1  EQU  *                END OF ITEM WITH KEY = '3E'
+                                                            SPACE 2
+                                                            EJECT
+ ***********************************************************************
+ *                                                                     *
+ *       SSR - SPECIAL SERVICE REQUEST FOR SBPREQ/RES            EIQ581*
+ *       KEY = '4A'                                              EIQ581*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIQ581
+ WR10R4A&CG1  DS   CL4    C334 9962 SPECIAL REQUIREMENT TYPE      EIQ581
+ WR10S4A&CG1  DS   CL2         4405 STATUS CODE                   EIQ581
+ WR10Q4A&CG1  DS   CL3         6060 QUANTITY OF SERVICES REQ      EIQ581
+ WR10C4A&CG1  DS   CL4    C332 9960 SEAT NUMBERS FOR RQST         EIQ581
+ WR10Y4A&CG1  DS   CL3         6411 QUALIFIES YEAR-NOT USED NOW   EIQ581
+ WR10T4A&CG1  DS   CL3         9944 RELATED TIF NO-NOT USED NOW   EIQ581
+ WR10P4A&CG1  DS   CL2         9825 TYPE OF SEAT-N/W/A            EIQ581
+ WR10E4A&CG1  EQU  *           END OF ITEM WITH KEY = '4A'        EIQ581
+ ***********************************************************************
+ *                                                                     *
+ *       SDT - SELECTION DETAILS                                 EIQ677*
+ *       KEY = '4B'                                              EIQ677*
+ *                                                                     *
+ ***********************************************************************
+ *                                                                EIQ677
+              ORG  WR10ORG&CG1                                    EIQ677
+ WR10S4B&CG1  DS   CL3    C660 9750 TYPE OF SELL ENTRY BY AGENT   EIQ677
+ WR10A4B&CG1  DS   CL3         9749 TYPE OF AVAILABILITY DISPLAY  EIQ677
+ WR10E4B&CG1  EQU  *           END OF ITEM WITH KEY = '4B'        EIQ677
+ ***********************************************************************
+ *                                                                     *
+ *       APD - ADDITIONAL PRODUCT DETAILS                        EID670*
+ *       KEY = '50'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10A50&CG1  DS   CL3              AIRCRAFT CODE                 EID670
+ WR10S50&CG1  DS   CL2              NUMBER OF STOPS               EID670
+ WR10D50&CG1  DS   CL4              FLIGHT DURATION, HHMM         EID670
+ WR10O50&CG1  DS   CL3              ON TIME PERFORMANCE PERCENT   EID670
+ WR10W50&CG1  DS   CL1              DAY NUMBER OF THE WEEK, 1 - 7 EID670
+ WR10G50&CG1  DS   CL6              GATE OF DEP/ARR               EID670
+ WR10T50&CG1  DS   CL2              TERMINAL OF DEP/ARR           EID670
+ WR10R50&CG1  DS   CL2              CONCOURSE OF DEP/ARR          EID670
+ WR10C50&CG1  DS   CL10             CHECK-IN DATE/TIME,DDMMYYHHMM EID670
+ WR10F50&CG1  DS   CL3              FACILITY CODE (ENTERTAINMENT) EID670
+ WR10M50&CG1  DS   CL3              FACILITY CODE (MEAL SERVICE)  EID670
+ WR10150&CG1  DS   CL3              1A CARRIER ACCESS             EID670
+ WR10E50&CG1  EQU  *                END OF ITEM WITH KEY = '50'
+                                                            SPACE 2
+                                                            EJECT
+ ****************************************************************EIH838*
+ *                                                               EIH838*
+ *       APD - ADDITIONAL PRODUCT DETAILS                        EIH838*
+ *       KEY = '7B'                                              EID838*
+ *                                                               EIH838*
+ ***********************************************************************
+                                                            SPACE 2
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10A7B&CG1  DS   CL8              AIRCRAFT CODE                 EIH838
+ WR10S7B&CG1  DS   CL3              NUMBER OF STOPS               EIH838
+ WR10D7B&CG1  DS   CL6              FLIGHT DURATION, HHMM         EIH838
+ WR10O7B&CG1  DS   CL8              ON TIME PERFORMANCE PERCENT   EIH838
+ WR10W7B&CG1  DS   CL7              DAYS OF OPERATION             EIH838
+ WR10DT7B&CG1 DS   CL35             DATE/TIME/PERIOD              EIH838
+ WR10CX7B&CG1 DS   CL1              COMPLEXING FLIGHT             EIH838
+ WR10G17B&CG1 DS   CL25             LOCATION IDENT. GUAGE 1       EIH838
+ WR10G27B&CG1 DS   CL25             LOCATION IDENT. GUAGE 2       EIH838
+ WR10G37B&CG1 DS   CL25             LOCATION IDENT. GUAGE 3       EIH838
+ WR10GD7B&CG1 DS   CL6              GATE OF DEPARTURE             EIH838
+ WR10TD7B&CG1 DS   CL25             TERMINAL OF DEPARTURE         EIH838
+ WR10CD7B&CG1 DS   CL25             CONCOURSE OF DEPARTURE        EIH838
+ WR10GA7B&CG1 DS   CL6              GATE OF ARRIVAL               EIH838
+ WR10TA7B&CG1 DS   CL25             TERMINAL OF ARRIVAL           EIH838
+ WR10MV7B&CG1 DS   CL18             MEASUREMENT VALUE             EIH838
+ WR10MQ7B&CG1 DS   CL3              MEASURE UNIT QUALIFIER        EIH838
+ WR10F17B&CG1 DS   CL4              FIRST TIME (MILEAGE)          EIH838
+ WR10F27B&CG1 DS   CL4              FIRST TIME (TRAVELLER TIME)   EIH838
+ WR10S17B&CG1 DS   CL4              SECOND TIME (TRAVELLER TIME)  EIH838
+ WR10CI7B&CG1 DS   CL10             CHECK-IN DATE/TIME,DDMMYYHHMM EIH838
+ WR10F7B&CG1  DS   CL3              FACILITY TYPE, CODED          EIH838
+ WR10FD7B&CG1 DS   CL1              FACILITY DESCRIPTION          EIH838
+ WR10E7B&CG1  EQU  *                END OF ITEM WITH KEY = '7B'   EIH838
+                                                            SPACE 2
+ *
+ ***********************************************************************
+ *                                                                     *
+ *       ERC - APPLICATION ERROR INFORMATION                     EID670*
+ *       KEY = '51'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C51&CG1  DS   CL3    C901 9321 APPLICATION ERROR CODE        EID670
+ WR10Q51&CG1  DS   CL3         1131 CODE LIST QUALIFIER           EID670
+ WR10R51&CG1  DS   CL3         3055 CODE LIST RESPONSIBLE AGENCY  EID670
+ WR10E51&CG1  EQU  *                END OF ITEM WITH KEY = '51'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       IFT - INTERACTIVE FREE TEXT                             EID670*
+ *       KEY = '52'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C52&CG1  DS   CL1              CODE SPECIFYING TEXT SUBJECT  EID670
+ WR10I52&CG1  DS   CL4              TO SPECIFY CODED TEXT INFO.   EID670
+ WR10S52&CG1  DS   CL3              STATUS OF INSTRUCTION         EID670
+ WR10A52&CG1  DS   CL3              IATA AIRLINE CODE             EID670
+ WR10L52&CG1  DS   CL3              LANGUAGE CODED                EID670
+ WR10T52&CG1  DS   CL70             FREE TEXT                     EID670
+ WR10E52&CG1  EQU  *                END OF ITEM WITH KEY = '52'
+                                                            SPACE 2
+                                                            EJECT
+ ***********************************************************************
+ *                                                                     *
+ *       MSG - MESSAGE ACTION DETAILS                            EID670*
+ *       KEY = '53'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10B53&CG1  DS   CL1              BUSINESS FUNCTION             EID670
+ WR10M53&CG1  DS   CL2              MESSAGE FUNCTION              EID670
+ WR10A53&CG1  DS   CL1              CODE FOR ACTION TAKEN IN RESP.EID670
+ WR10E53&CG1  EQU  *                END OF ITEM WITH KEY = '53'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ORG - ORIGINATOR OF REQUEST DETAILS                     EID670*
+ *       KEY = '54'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10I54&CG1  DS   CL3              SYSTEM ID (IATA CODE)         EID670
+ WR10P54&CG1  DS   CL3              SYSTEM LOCATION/PLACE         EID670
+ WR10A54&CG1  DS   CL8              ATA/IATA TRAVEL AGT ID NUMBER EID670
+ WR10T54&CG1  DS   CL9              TRAVEL AGENT IDENTIFIER       EID670
+ WR10L54&CG1  DS   CL3              TRAVEL AGENT LOCATION         EID670
+ WR10O54&CG1  DS   CL3              ORIGINATOR IDENTIFICATION     EID670
+ WR10Y54&CG1  DS   CL1              ORIGINATOR TYPE CODE          EID670
+ WR10C54&CG1  DS   CL2              ISO COUNTRY CODE              EID670
+ WR10U54&CG1  DS   CL3              ISO CURRENCY CODE             EID670
+ WR10G54&CG1  DS   CL32             LANGUAGE CODED                EID670
+ WR10R54&CG1  DS   CL9              AUTHORITY CODE OF REQUESTOR   EID670
+ WR10E54&CG1  EQU  *                END OF ITEM WITH KEY = '54'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ORG - ORIGINATOR OF REQUEST DETAILS                     EIH838*
+ *       KEY = '4F'                                              EIH838*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10I4F&CG1  DS   CL35   C336 9906 COMPANY IDENTIFICATION        EIH838
+ WR10P4F&CG1  DS   CL25        3225 PLACE/LOCATION                EIH838
+ WR10W4F&CG1  DS   CL17        3224 PLACE/LOCATION NAME           EIH838
+ WR10T4F&CG1  DS   CL9    C300 9900 TRAVEL AGENT IDENTIFICATION   EIH838
+ WR10H4F&CG1  DS   CL9         9902 IN-HOUSE IDENTIFICATION 1     EIH838
+ WR10D4F&CG1  DS   CL9         9902 IN-HOUSE IDENTIFICATION 2     EIH838
+ WR10J4F&CG1  DS   CL25   C328 3225 PLACE/LOCATION IDENTIFICATION EIH838
+ WR10X4F&CG1  DS   CL17        3224 PLACE/LOCATION NAME           EIH838
+ WR10C4F&CG1  DS   CL35   C336 9906 COMPANY IDENTIFICATION        EIH838
+ WR10Y4F&CG1  DS   CL25        3225 PLACE/LOCATION IDENTIFICATION EIH838
+ WR10V4F&CG1  DS   CL17        3224 PLACE/LOCATION NAME           EIH838
+ WR10O4F&CG1  DS   CL1    9972      ORIGINATOR TYPE CODE          EIH838
+ WR10B4F&CG1  DS   CL3    C354 3207 COUNTRY, CODED                EIH838
+ WR10G4F&CG1  DS   CL3         6345 CURRENCY, CODED               EIH838
+ WR10L4F&CG1  DS   CL3         3453 LANGUAGE, CODED               EIH838
+ WR10A4F&CG1  DS   CL9    9904      ORIGINATORS AUTH. REQ CODE    EIH838
+ WR10N4F&CG1  DS   CL25   3148      COMMUNICATION NUMBER          EIH838
+ WR10Z4F&CG1  DS   CL17   3039      PARTY IDENTIFICATION          EIH838
+ WR10E4F&CG1  EQU  *                END OF ITEM WITH KEY = '4F'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RPI - RELATED PRODUCT INFORMATION                       EID670*
+ *       KEY = '55'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10N55&CG1  DS   CL2              NUMBER OF PASSENGERS (SEATS)  EID670
+ WR10A55&CG1  DS   CL2              IATA ACTION CODE              EID670
+ WR10E55&CG1  EQU  *                END OF ITEM WITH KEY = '55'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       TVL - TRAVEL PRODUCT INFORMATION                        EID670*
+ *       KEY = '56'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10D56&CG1  DS   CL6              DEPARTURE DATE (DDMMYY)       EID670
+ WR10T56&CG1  DS   CL4              DEPARTURE TIME (HHMM)         EID670
+ WR10A56&CG1  DS   CL6              ARRIVAL DATE (DDMMYY)         EID670
+ WR10H56&CG1  DS   CL4              ARRIVAL TIME (HHMM)           EID670
+ WR10V56&CG1  DS   CL1              DATE VARIATION                EID670
+ WR10B56&CG1  DS   CL3              DEPARTURE PLACE (BOARD PT)    EID670
+ WR10O56&CG1  DS   CL3              ARRIVAL PLACE (OFF PT)        EID670
+ WR10C56&CG1  DS   CL3              COMPANY ID                    EID670
+ WR10F56&CG1  DS   CL4              FLIGHT NUMBER                 EID670
+ WR10S56&CG1  DS   CL1              CLASS OF SERVICE              EID670
+ WR10X56&CG1  DS   CL1              SUFFIX RELATED TO FLIGHT      EID670
+ WR10Q56&CG1  DS   CL3              SEQUENCE NUMBER               EID670
+ WR10L56&CG1  DS   CL6              LINE ITEM NUMBER              EID670
+ WR10E56&CG1  EQU  *                END OF ITEM WITH KEY = '56'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RCI - RESERVATION CONTROL INFORMATION                   EID670*
+ *       KEY = '57'                                              EID670*
+ *                                                                     *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10A57&CG1  DS   CL3              AIRLINE DESIGNATOR CODE       EID670
+ WR10P57&CG1  DS   CL9              PASSENGER NAME RECORD LOC     EID670
+ WR10E57&CG1  EQU  *                END OF ITEM WITH KEY = '57'
+                                                            SPACE 2
+                                                            EJECT
+ ***********************************************************************
+ *                                                                     *
+ *       LTS - LONG TEXT SEGMENT                                 EID670*
+ *       KEY = '58'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10L58&CG1  DS   XL2              LENGTH OF TELETYPE TEXT       EID670
+ WR10A58&CG1  DS   CL1              TEXT IN AIRIMP FORMAT         EID670
+ WR10E58&CG1  EQU  *                END OF ITEM WITH KEY = '58'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ODI - ORIGIN AND DESTINATION INFORMATION                      *
+ *       KEY = '59'                                                    *
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10D59&CG1  DS   CL3              PLACE OF DEPARTURE            EID670
+ WR10A59&CG1  DS   CL3              PLACE OF DESTINATION          EID670
+ WR10E59&CG1  EQU  *                END OF ITEM WITH KEY = '59'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       UCI - INTERCHANGE RESPONSE                              EID670*
+ *       KEY = '5A'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C5A&CG1  DS   CL14             INTERCHANGE CONTROL REFERENCE EID670
+ WR10S5A&CG1  DS   CL35             SENDER OF INTERCHANGE         EID670
+ WR10R5A&CG1  DS   CL35             RECIPIENT OF INTERCHANGE      EID670
+ WR10A5A&CG1  DS   CL3              ACTION, CODED                 EID670
+ WR10E5A&CG1  EQU  *                END OF ITEM WITH KEY = '5A'   EID670
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       UCM - MESSAGE RESPONSE                                  EID670*
+ *       KEY = '5B'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10N5B&CG1  DS   CL14             MESSAGE REFERENCE NUMBER      EID670
+ WR10I5B&CG1  DS   CL6              MESSAGE TYPE ID               EID670
+ WR10V5B&CG1  DS   CL3              MESSAGE TYPE VERSION          EID670
+ WR10R5B&CG1  DS   CL3              RELEASE NUMBER OF MESSAGE     EID670
+ WR10C5B&CG1  DS   CL2              CONTROLLING AGENCY            EID670
+ WR10A5B&CG1  DS   CL3              ACTION, CODED                 EID670
+ WR10X5B&CG1  DS   CL3              SYNTAX ERROR, CODED           EID670
+ WR10E5B&CG1  EQU  *                END OF ITEM WITH KEY = '5B'   EID670
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       CLT - MESSAGE RESPONSE                                  EID670*
+ *       KEY = '5C'                                              EID670*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10R5C&CG1  DS   CL2              REASON CODE                   EID670
+ WR10E5C&CG1  EQU  *                END OF ITEM WITH KEY = '5C'   EID670
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       CLT - MESSAGE RESPONSE                                  EIE642*
+ *       KEY = '5D'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10R5D&CG1  DS   CL3              REASON CODE                   EIE642
+ WR10E5D&CG1  EQU  *                END OF ITEM WITH KEY = '5D'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ORG - ORIGINATOR OF REQUEST DETAILS                     EIE642*
+ *       KEY = '5E'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10I5E&CG1  DS   CL35             SYSTEM ID (IATA CODE)         EIE642
+ WR10P5E&CG1  DS   CL25             SYSTEM LOCATION/PLACE         EIE642
+ WR10A5E&CG1  DS   CL9              ATA/IATA TRAVEL AGT ID NUMBER EIE642
+ WR10T5E&CG1  DS   CL9              TRAVEL AGENT IDENTIFIER       EIE642
+ WR10L5E&CG1  DS   CL25             TRAVEL AGENT LOCATION         EIE642
+ WR10O5E&CG1  DS   CL35             ORIGINATOR IDENTIFICATION     EIE642
+ WR10Y5E&CG1  DS   CL1              ORIGINATOR TYPE CODE          EIE642
+ WR10C5E&CG1  DS   CL3              ISO COUNTRY CODE              EIE642
+ WR10M5E&CG1  DS   CL3              CURRENCY CODE                 EIE642
+ WR10R5E&CG1  DS   CL9              AUTHORITY CODE OF REQUESTOR   EIE642
+ WR10E5E&CG1  EQU  *                END OF ITEM WITH KEY = '5E'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       MAP - MESSAGE / APPLICATION / PRODUCT DETAILS (Q)       EIE642*
+ *       KEY = '5F'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C5F&CG1  DS   CL3              INSTRUCTION, CODED            EIE642
+ WR10I5F&CG1  DS   CL35             SYSTEM ID (IATA CODE)         EIE642
+ WR10F5F&CG1  DS   CL3              MESSAGE FUNCTION              EIE642
+ WR10E5F&CG1  EQU  *                END OF ITEM WITH KEY = '5F'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       MSG - MESSAGE ACTION DETAILS                            EIE642*
+ *       KEY = '72'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10B72&CG1  DS   CL3              BUSINESS FUNCTION             EIE642
+ WR10M72&CG1  DS   CL3              MESSAGE FUNCTION              EIE642
+ WR10A72&CG1  DS   CL3              CODE FOR ACTION TAKEN IN RESP.EIE642
+ WR10E72&CG1  EQU  *                END OF ITEM WITH KEY = '72'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RPI - RELATED PRODUCT INFORMATION                       EIE642*
+ *       KEY = '73'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10N73&CG1  DS   CL3              NUMBER OF PASSENGERS (SEATS)  EIE642
+ WR10A73&CG1  DS   CL2              IATA ACTION CODE              EIE642
+ WR10E73&CG1  EQU  *                END OF ITEM WITH KEY = '73'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RPI - RELATED PRODUCT INFORMATION - NUMBER OF PASSENGERS EIH838
+ *       ASSOCIATED WITH THE PRECEDING TVL.                       EIH838
+ *       KEY = 'DC'          SMPREQ EDIFACT VERSION 96.2          EIH838
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10NDC&CG1  DS   CL15   6060      NUMBER OF PASSENGERS (SEATS)  EIH838
+ WR10EDC&CG1  EQU  *                END OF ITEM WITH KEY = 'DC'   EIH838
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       RPI - RELATED PRODUCT INFORMATION - STATUS, CODED        EIH838
+ *       KEY = 'DD'          SMPREQ EDIFACT VERSION 96.2          EIH838
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10ADD&CG1  DS   CL3    4405      IATA ACTION/ADVICE/STATUS     EIH838
+ *                                  CODE FOR THIS FLIGHT SEGMENT  EIH838
+ WR10EDD&CG1  EQU  *                END OF ITEM WITH KEY = 'DD'   EIH838
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       ERC - APPLICATION ERROR INFORMATION                     EIE642*
+ *       KEY = '74'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C74&CG1  DS   CL3              APPLICATION ERROR CODE        EIE642
+ WR10E74&CG1  EQU  *                END OF ITEM WITH KEY = '74'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       IFT - INTERACTIVE FREE TEXT                             EIE642*
+ *       KEY = '75'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C75&CG1  DS   CL1              CODE SPECIFYING TEXT SUBJECT  EIE642
+ WR10I75&CG1  DS   CL4              TO SPECIFY CODED TEXT INFO.   EIE642
+ WR10S75&CG1  DS   CL3              STATUS OF INSTRUCTION         EIE642
+ WR10A75&CG1  DS   CL3              IATA AIRLINE CODE             EIE642
+ WR10L75&CG1  DS   CL3              LANGUAGE CODED                EIE642
+ WR10T75&CG1  DS   CL70             FREE TEXT                     EIE642
+ WR10E75&CG1  EQU  *                END OF ITEM WITH KEY = '75'
+                                                            SPACE 2
+ ***********************************************************************
+ *                                                                     *
+ *       TVL - TRAVEL PRODUCT INFORMATION                        EIE642*
+ *       KEY = '76'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10D76&CG1  DS   CL6              DEPARTURE DATE (DDMMYY)       EIE642
+ WR10T76&CG1  DS   CL4              DEPARTURE TIME (HHMM)         EIE642
+ WR10A76&CG1  DS   CL6              ARRIVAL DATE (DDMMYY)         EIE642
+ WR10H76&CG1  DS   CL4              ARRIVAL TIME (HHMM)           EIE642
+ WR10B76&CG1  DS   CL3              DEPARTURE PLACE (BOARD PT)    EIE642
+ WR10O76&CG1  DS   CL3              ARRIVAL PLACE (OFF PT)        EIE642
+ WR10C76&CG1  DS   CL3              COMPANY ID                    EIE642
+ WR10F76&CG1  DS   CL4              FLIGHT NUMBER                 EIE642
+ WR10S76&CG1  DS   CL1              CLASS OF SERVICE              EIE642
+ WR10X76&CG1  DS   CL1              ITEM DESCRIPTION ID           EIE642
+ WR10E76&CG1  EQU  *                END OF ITEM WITH KEY = '76'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *       TVL - SEQUENCE NUMBER ELEMENT                            EIH838
+ *       X'7D'                                                    EIH838
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10N7D&CG1  DS   CL6              SEQUENCE NUMBER               EIH838
+ WR10E7D&CG1  EQU  *                END OF ITEM WITH KEY = '7D'   EIE642
+ ***********************************************************************
+ *       TVL - LINE ITEM NUMBER AND PROCESSING INDICATOR ELEMENTS EIH838
+ *       X'7E'                                                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10L7E&CG1  DS   CL6              LINE ITEM NUMBER              EIH838
+ WR10P7E&CG1  DS   CL3              PROCESSING INDICATOR CODE     EIH838
+ WR10E7E&CG1  EQU  *                END OF ITEM WITH KEY = '7E'   EIE838
+ ***********************************************************************
+ *       TVL - MARRIAGE CONTROL DETAILS                           EIH838
+ *       X'7F'                                                    EIH838
+ ***********************************************************************
+              ORG  WR10ORG&CG1                                    EIH838
+ WR10R7F&CG1  DS   CL3              RELATION, CODED               EIH838
+ WR10G7F&CG1  DS   CL10             GROUP NUMBER                  EIH838
+ WR10M7F&CG1  DS   CL6              LINE ITEM NUMBER              EIH838
+ WR10L7F&CG1  DS   CL3              RELATION CODED                EIH838
+ WR10CI7F&CG1 DS   CL1              COMPANY IDENTTIFICATION       EIH838
+ WR10E7F&CG1  EQU  *                END OF ITEM WITH KEY = '7F'   EIE838
+ ***********************************************************************
+ *                                                                     *
+ *       UCI - INTERCHANGE RESPONSE                              EIE642*
+ *       KEY = '77'                                              EIE642*
+ *                                                                     *
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1
+ WR10C77&CG1  DS   CL14             INTERCHANGE CONTROL REFERENCE EIE642
+ WR10S77&CG1  DS   CL35             SENDER OF INTERCHANGE         EIE642
+ WR10R77&CG1  DS   CL35             RECIPIENT OF INTERCHANGE      EIE642
+ WR10A77&CG1  DS   CL3              ACTION, CODED                 EIE642
+ WR10X77&CG1  DS   CL3              SYNTAX ERROR, CODED           EIE642
+ WR10E77&CG1  EQU  *                END OF ITEM WITH KEY = '77'   EIE642
+                                                            SPACE 2
+ ***********************************************************************
+ *       POC - POINT OF COMMENCEMENT                             EIQ544*
+ *       KEY = 'CA'                                              EIQ544*
+ ***********************************************************************
+ *                                                                EIQ544
+              ORG  WR10ORG&CG1                                    EIQ544
+ WR10PCA&CG1  DS   CL3         3225 PLACE/LOCATION IDENTIFICATION EIQ544
+ WR10DCA&CG1  DS   CL6         9916 FIRST DATE                    EIQ580
+ WR10TCA&CG1  DS   CL4         9918 FIRST TIME                    EIQ580
+ WR10ECA&CG1  EQU  *                END OF ITEM WITH KEY = 'CA'   EIQ544
+                                                            SPACE 2
+ ***********************************************************************
+ *       RPI - RELATED PRODUCT INFORMATION                       EIQ580*
+ *       KEY = 'CB'                                              EIQ580*
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIQ580
+ WR10PCB&CG1  DS   CL2         6060 NUMBER OF PASSENGERS (SEATS)  EIQ580
+ WR10ACB&CG1  DS   CL3         4405 STATUS, CODED                 EIQ580
+ WR10ECB&CG1  EQU  *                END OF ITEM WITH KEY = 'CB'   EIQ580
+                                                            SPACE 2
+ ***********************************************************************
+ *       TVL - TRAVEL PRODUCT INFORMATION FOR SABRE PAOREQ       EIQ580*
+ *       KEY = 'CC'                                              EIQ580*
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIQ580
+ WR10DCC&CG1  DS   CL6    C310 9916 DEPARTURE DATE (DDMMYY)       EIQ580
+ WR10NCC&CG1  DS   CL4         9918 DEPARTURE TIME (HHMM)         EIQ580
+ WR10RCC&CG1  DS   CL6         9920 ARRIVAL DATE (DDMMYY)         EIQ580
+ WR10HCC&CG1  DS   CL4         9922 ARRIVAL TIME (HHMM)           EIQ580
+ WR10KCC&CG1  DS   CL3    C328 3225 DEPARTURE PLACE (BOARD PT)    EIQ580
+ WR10GCC&CG1  DS   CL3    C328 3225 ARRIVAL PLACE (OFF PT)        EIQ580
+ WR10ICC&CG1  DS   CL2    C306 9906 COMPANY ID                    EIQ580
+ WR10JCC&CG1  DS   CL2         9906 COMPANY ID (OPERATING AIRLINE)EIQ580
+ WR10LCC&CG1  DS   CL4    C308 9908 FLIGHT NUMBER                 EIQ580
+ WR10VCC&CG1  DS   CL1         7037 CLASS OF SERVICE              EIQ580
+ WR10XCC&CG1  DS   CL1         9914 ITEM DESCRIPTION ID           EIQ580
+ WR10YCC&CG1  DS   CL2    C309 1050 SEQUENCE NUMBER               EIQ580
+ WR10ZCC&CG1  DS   CL2    1082      LINE ITEM NUMBER              EIQ580
+ WR10QCC&CG1  DS   CL3    7365      PROCESSING INDICATOR          EIQ580
+ WR10ECC&CG1  EQU  *                END OF ITEM WITH KEY = 'CC'   EIQ580
+                                                             SPACE 2
+ ***********************************************************************
+ *       PDI - PRODUCT INFORMATION                               EIQ580*
+ *       KEY = 'CD'                                              EIQ580*
+ ***********************************************************************
+ *
+              ORG  WR10ORG&CG1                                    EIQ580
+ WR10QCD&CG1  DS   CL3    9970      PRODUCT DETAILS QUALIFIER     EIQ580
+ WR10ICD&CG1  DS   CL1    C304 7037 CHARECTERISTIC IDENTIFICATION EIQ580
+ WR10VCD&CG1  DS   CL3         7011 ARTICLE AVAILABILITY          EIQ580
+ WR10XCD&CG1  DS   CL7         7009 PRODUCT DETAILS QUALIFIER     EIQ580
+ WR10ECD&CG1  EQU  *                END OF ITEM WITH KEY = 'CD'   EIQ580
